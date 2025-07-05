@@ -93,9 +93,18 @@
 
 			footer {
 				border-top: 1px solid #e5e7eb;
-				padding: 1rem;
+				padding: 1.5rem 2rem;
 				text-align: center;
 				font-size: 0.875rem;
+				color: #6b7280;
+			}
+			footer a {
+				color: #3b82f6;
+				text-decoration: none;
+				margin: 0 0.5rem;
+			}
+			footer a:hover {
+				text-decoration: underline;
 			}
 		</style>
 	</head>
@@ -106,6 +115,8 @@
 				<a href="#calculator">Calculator</a>
 				<a href="#how-it-works">How it works</a>
 				<a href="#about">About</a>
+				<a href="#tips">Tips</a>
+				<a href="#faq">FAQ</a>
 				<button
 					onclick="toggleTheme()"
 					class="ml-4 border px-2 py-1 rounded"
@@ -133,12 +144,14 @@
 						type="number"
 						placeholder="Annual Gross Salary (€)"
 						class="flex-1"
+						min="0"
 					/>
 					<input
 						id="hours"
 						type="number"
 						placeholder="Weekly Working Hours"
 						class="flex-1"
+						min="0"
 					/>
 					<button onclick="calculate()">Calculate</button>
 				</div>
@@ -172,10 +185,111 @@
 					transmitted. All calculations are done in your browser.
 				</p>
 			</section>
+
+			<section id="tips" class="mt-16">
+				<h2 class="text-xl font-semibold mb-4 text-theme">
+					Salary Tips
+				</h2>
+				<ul
+					class="list-disc list-inside text-gray-700 text-theme space-y-2"
+				>
+					<li>
+						Consider how overtime or bonuses affect your hourly
+						earnings.
+					</li>
+					<li>
+						Use this tool to negotiate fair compensation based on
+						your working hours.
+					</li>
+					<li>
+						Track your real-time earnings during projects or
+						freelance work.
+					</li>
+					<li>
+						Remember to factor in taxes and benefits when evaluating
+						salary.
+					</li>
+				</ul>
+			</section>
+
+			<section id="faq" class="mt-16">
+				<h2 class="text-xl font-semibold mb-4 text-theme">
+					Frequently Asked Questions
+				</h2>
+				<dl class="space-y-4 text-gray-700 text-theme">
+					<div>
+						<dt class="font-semibold">
+							Is my data saved or shared?
+						</dt>
+						<dd>
+							No. All calculations happen locally in your browser,
+							ensuring privacy.
+						</dd>
+					</div>
+					<div>
+						<dt class="font-semibold">
+							Why does the live counter update every second?
+						</dt>
+						<dd>
+							To give you a dynamic and real-time visualization of
+							your earnings as time passes.
+						</dd>
+					</div>
+					<div>
+						<dt class="font-semibold">
+							Can I use this tool for hourly or monthly salary?
+						</dt>
+						<dd>
+							You can convert your salary to annual figures and
+							input those values for accurate results.
+						</dd>
+					</div>
+				</dl>
+			</section>
+
+			<section id="call-to-action" class="mt-16 text-center">
+				<h2 class="text-xl font-semibold mb-4 text-theme">
+					Ready to See Your Earnings Live?
+				</h2>
+				<button
+					onclick="document.getElementById('income').focus()"
+					class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+				>
+					Start Calculating Now
+				</button>
+			</section>
 		</main>
 
 		<footer>
-			Created by Wessel van den IJssel — <span id="year"></span>
+			<div>
+				<p>
+					Created by Wessel van den IJssel &mdash;
+					<span id="year"></span>
+				</p>
+				<p class="mt-2">
+					<a
+						href="mailto:info@wesselvandenijssel.nl"
+						aria-label="Email contact"
+						>Email</a
+					>
+					|
+					<a
+						href="https://www.linkedin.com/in/wessel-van-den-ijssel/"
+						target="_blank"
+						rel="noopener"
+						aria-label="LinkedIn profile"
+						>LinkedIn</a
+					>
+					|
+					<a
+						href="https://github.com/wesselvdijssel"
+						target="_blank"
+						rel="noopener"
+						aria-label="GitHub profile"
+						>GitHub</a
+					>
+				</p>
+			</div>
 		</footer>
 
 		<script>
