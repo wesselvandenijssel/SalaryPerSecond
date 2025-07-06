@@ -53,15 +53,37 @@
 				flex-wrap: wrap;
 			}
 			input,
-			button {
+			button,
+			select {
 				background-color: #ffffff;
 				color: #1f2937;
 				border: 1px solid #d1d5db;
 				padding: 0.5rem 1rem;
 				border-radius: 0.375rem;
 			}
+
+			body.dark input,
+			body.dark button,
+			body.dark select {
+				background-color: #374151;
+				color: #f9fafb;
+				border-color: #4b5563;
+			}
+
 			button:hover {
 				background-color: #e5e7eb;
+			}
+
+			body.dark button:hover {
+				background-color: #4b5563;
+			}
+
+			label {
+				color: var(--text-light);
+			}
+
+			body.dark label {
+				color: var(--text-dark);
 			}
 			header {
 				background-color: var(--bg-light);
@@ -140,24 +162,147 @@
 					></div>
 				</div>
 				<div class="input-area">
-					<input
-						id="income"
-						type="number"
-						placeholder="Annual Gross Salary (€)"
-						class="flex-1"
-						min="0"
-					/>
-					<input
-						id="hours"
-						type="number"
-						placeholder="Weekly Working Hours"
-						class="flex-1"
-						min="0"
-					/>
-					<button onclick="calculate()">Calculate</button>
+					<div class="flex flex-col sm:flex-row gap-4 w-full">
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
+								>Salary Amount</label
+							>
+							<input
+								id="income"
+								type="number"
+								placeholder="Enter salary amount"
+								class="w-full"
+								min="0"
+							/>
+						</div>
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
+								>Currency</label
+							>
+							<select id="currency" class="w-full">
+								<option value="EUR">€ Euro</option>
+								<option value="USD">$ US Dollar</option>
+								<option value="GBP">£ British Pound</option>
+								<option value="JPY">¥ Japanese Yen</option>
+								<option value="CAD">C$ Canadian Dollar</option>
+								<option value="AUD">
+									A$ Australian Dollar
+								</option>
+								<option value="CHF">CHF Swiss Franc</option>
+								<option value="CNY">¥ Chinese Yuan</option>
+								<option value="SEK">kr Swedish Krona</option>
+								<option value="NOK">kr Norwegian Krone</option>
+								<option value="DKK">kr Danish Krone</option>
+								<option value="PLN">zł Polish Zloty</option>
+								<option value="CZK">Kč Czech Koruna</option>
+								<option value="HUF">Ft Hungarian Forint</option>
+								<option value="RON">lei Romanian Leu</option>
+								<option value="BGN">лв Bulgarian Lev</option>
+								<option value="HRK">kn Croatian Kuna</option>
+								<option value="RSD">дин Serbian Dinar</option>
+								<option value="TRY">₺ Turkish Lira</option>
+								<option value="RUB">₽ Russian Ruble</option>
+								<option value="UAH">₴ Ukrainian Hryvnia</option>
+								<option value="INR">₹ Indian Rupee</option>
+								<option value="BRL">R$ Brazilian Real</option>
+								<option value="MXN">$ Mexican Peso</option>
+								<option value="ARS">$ Argentine Peso</option>
+								<option value="CLP">$ Chilean Peso</option>
+								<option value="COP">$ Colombian Peso</option>
+								<option value="PEN">S/ Peruvian Sol</option>
+								<option value="UYU">$ Uruguayan Peso</option>
+								<option value="ZAR">
+									R South African Rand
+								</option>
+								<option value="KES">KSh Kenyan Shilling</option>
+								<option value="NGN">₦ Nigerian Naira</option>
+								<option value="EGP">£ Egyptian Pound</option>
+								<option value="MAD">DH Moroccan Dirham</option>
+								<option value="TND">DT Tunisian Dinar</option>
+								<option value="KRW">₩ South Korean Won</option>
+								<option value="THB">฿ Thai Baht</option>
+								<option value="VND">₫ Vietnamese Dong</option>
+								<option value="IDR">
+									Rp Indonesian Rupiah
+								</option>
+								<option value="MYR">
+									RM Malaysian Ringgit
+								</option>
+								<option value="SGD">S$ Singapore Dollar</option>
+								<option value="PHP">₱ Philippine Peso</option>
+								<option value="HKD">
+									HK$ Hong Kong Dollar
+								</option>
+								<option value="TWD">NT$ Taiwan Dollar</option>
+								<option value="NZD">
+									NZ$ New Zealand Dollar
+								</option>
+								<option value="ILS">₪ Israeli Shekel</option>
+								<option value="AED">AED UAE Dirham</option>
+								<option value="SAR">SR Saudi Riyal</option>
+								<option value="QAR">QR Qatari Riyal</option>
+								<option value="KWD">KD Kuwaiti Dinar</option>
+								<option value="BHD">BD Bahraini Dinar</option>
+								<option value="OMR">OMR Omani Rial</option>
+								<option value="JOD">JD Jordanian Dinar</option>
+								<option value="LBP">LL Lebanese Pound</option>
+							</select>
+						</div>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
+								>Salary Period</label
+							>
+							<select id="salary-period" class="w-full">
+								<option value="annual">Per Year</option>
+								<option value="monthly">Per Month</option>
+								<option value="hourly">Per Hour</option>
+							</select>
+						</div>
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
+								>Working Hours</label
+							>
+							<input
+								id="hours"
+								type="number"
+								placeholder="Enter working hours"
+								class="w-full"
+								min="0"
+							/>
+						</div>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
+								>Time Period</label
+							>
+							<select id="time-period" class="w-full">
+								<option value="weekly">Per Week</option>
+								<option value="daily">Per Day</option>
+								<option value="monthly">Per Month</option>
+							</select>
+						</div>
+						<div class="flex-1">
+							<!-- Empty space for layout balance -->
+						</div>
+					</div>
+					<button
+						onclick="calculate()"
+						class="w-full sm:w-auto mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+					>
+						Calculate
+					</button>
 				</div>
 				<p class="mt-4 text-sm text-gray-600 text-center text-theme">
-					Formula: per second = income / (hours per week × 52 × 3600)
+					Choose your salary period and working hours to calculate
+					your earnings per second
 				</p>
 			</section>
 
@@ -168,12 +313,38 @@
 				<p class="text-gray-700 mb-4 text-theme">
 					This tool estimates your salary per second by calculating
 					your total annual income divided by the number of seconds
-					you work in a year.
+					you work in a year. You can input your salary in different
+					formats:
 				</p>
-				<p class="text-gray-700 text-theme">
-					It's based on the number of hours you work per week,
-					multiplied by 52 weeks, and then by 3600 seconds in an hour.
-					This gives us the total number of working seconds in a year.
+				<ul class="list-disc list-inside text-gray-700 mb-4 text-theme">
+					<li><strong>Annual:</strong> Your total yearly salary</li>
+					<li>
+						<strong>Monthly:</strong> Your monthly salary
+						(multiplied by 12)
+					</li>
+					<li>
+						<strong>Hourly:</strong> Your hourly rate (multiplied by
+						total working hours)
+					</li>
+				</ul>
+				<p class="text-gray-700 mb-4 text-theme">
+					For working hours, you can specify:
+				</p>
+				<ul class="list-disc list-inside text-gray-700 text-theme">
+					<li><strong>Weekly:</strong> Hours worked per week</li>
+					<li>
+						<strong>Daily:</strong> Hours worked per day (assumes 5
+						working days)
+					</li>
+					<li>
+						<strong>Monthly:</strong> Hours worked per month
+						(converted to weekly)
+					</li>
+				</ul>
+				<p class="text-gray-700 text-theme mt-4">
+					The calculation converts everything to annual income and
+					weekly hours, then divides by the total working seconds in a
+					year (hours × 52 weeks × 3600 seconds).
 				</p>
 			</section>
 
@@ -366,6 +537,69 @@
 			let currentInstance;
 			let counterInterval;
 
+			// Currency symbols mapping
+			const currencySymbols = {
+				EUR: "€",
+				USD: "$",
+				GBP: "£",
+				JPY: "¥",
+				CAD: "C$",
+				AUD: "A$",
+				CHF: "CHF",
+				CNY: "¥",
+				SEK: "kr",
+				NOK: "kr",
+				DKK: "kr",
+				PLN: "zł",
+				CZK: "Kč",
+				HUF: "Ft",
+				RON: "lei",
+				BGN: "лв",
+				HRK: "kn",
+				RSD: "дин",
+				TRY: "₺",
+				RUB: "₽",
+				UAH: "₴",
+				INR: "₹",
+				BRL: "R$",
+				MXN: "$",
+				ARS: "$",
+				CLP: "$",
+				COP: "$",
+				PEN: "S/",
+				UYU: "$",
+				ZAR: "R",
+				KES: "KSh",
+				NGN: "₦",
+				EGP: "£",
+				MAD: "DH",
+				TND: "DT",
+				KRW: "₩",
+				THB: "฿",
+				VND: "₫",
+				IDR: "Rp",
+				MYR: "RM",
+				SGD: "S$",
+				PHP: "₱",
+				HKD: "HK$",
+				TWD: "NT$",
+				NZD: "NZ$",
+				ILS: "₪",
+				AED: "AED",
+				SAR: "SR",
+				QAR: "QR",
+				KWD: "KD",
+				BHD: "BD",
+				OMR: "OMR",
+				JOD: "JD",
+				LBP: "LL",
+			};
+
+			function getCurrencySymbol() {
+				const currency = document.getElementById("currency").value;
+				return currencySymbols[currency] || currency;
+			}
+
 			function calculate() {
 				const income = parseFloat(
 					document.getElementById("income").value
@@ -373,6 +607,10 @@
 				const hours = parseFloat(
 					document.getElementById("hours").value
 				);
+				const salaryPeriod =
+					document.getElementById("salary-period").value;
+				const timePeriod = document.getElementById("time-period").value;
+				const currencySymbol = getCurrencySymbol();
 				const chatOutput = document.getElementById("chat-output");
 				const liveCounter = document.getElementById("live-counter");
 
@@ -389,9 +627,46 @@
 				}
 				clearInterval(counterInterval);
 
-				const secondsPerYear = hours * 52 * 3600;
-				const perSecond = income / secondsPerYear;
+				// Convert salary to annual amount
+				let annualIncome = income;
+				if (salaryPeriod === "monthly") {
+					annualIncome = income * 12;
+				} else if (salaryPeriod === "hourly") {
+					// For hourly, we need to calculate based on working hours
+					let weeklyHours = hours;
+					if (timePeriod === "daily") {
+						weeklyHours = hours * 5; // Assuming 5 working days per week
+					} else if (timePeriod === "monthly") {
+						weeklyHours = hours / 4.33; // Average weeks per month
+					}
+					annualIncome = income * weeklyHours * 52;
+				}
+
+				// Convert working hours to weekly hours
+				let weeklyHours = hours;
+				if (timePeriod === "daily") {
+					weeklyHours = hours * 5; // Assuming 5 working days per week
+				} else if (timePeriod === "monthly") {
+					weeklyHours = hours / 4.33; // Average weeks per month
+				}
+
+				const secondsPerYear = weeklyHours * 52 * 3600;
+				const perSecond = annualIncome / secondsPerYear;
 				const formatted = perSecond.toFixed(6);
+
+				// Create descriptive text based on inputs
+				const salaryText =
+					salaryPeriod === "annual"
+						? "annually"
+						: salaryPeriod === "monthly"
+						? "per month"
+						: "per hour";
+				const timeText =
+					timePeriod === "weekly"
+						? "per week"
+						: timePeriod === "daily"
+						? "per day"
+						: "per month";
 
 				chatOutput.innerHTML = "";
 				liveCounter.innerHTML = "";
@@ -399,9 +674,10 @@
 				currentInstance = new window.TypeIt("#chat-output", {
 					strings: [
 						`Calculating your salary per second...`,
-						`You earn €${formatted} per second.`,
+						`Based on ${currencySymbol}${income.toLocaleString()} ${salaryText} and ${hours} hours ${timeText}...`,
+						`You earn ${currencySymbol}${formatted} per second.`,
 					],
-					speed: 40,
+					speed: 15,
 					lifeLike: true,
 					waitUntilVisible: true,
 					breakLines: true,
@@ -409,7 +685,7 @@
 						let totalEarned = 0;
 						counterInterval = setInterval(() => {
 							totalEarned += perSecond;
-							liveCounter.textContent = `You've earned €${totalEarned.toFixed(
+							liveCounter.textContent = `You've earned ${currencySymbol}${totalEarned.toFixed(
 								4
 							)} since clicking Calculate.`;
 						}, 1000);
@@ -420,6 +696,9 @@
 			function setFamousSalary(income, hours) {
 				document.getElementById("income").value = income;
 				document.getElementById("hours").value = hours;
+				document.getElementById("currency").value = "EUR";
+				document.getElementById("salary-period").value = "annual";
+				document.getElementById("time-period").value = "weekly";
 				calculate();
 			}
 
@@ -428,7 +707,7 @@
 					strings: [
 						"Hi there! Let's calculate your salary per second.",
 					],
-					speed: 40,
+					speed: 15,
 					lifeLike: true,
 					waitUntilVisible: true,
 					afterComplete: () => {
