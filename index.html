@@ -44,6 +44,9 @@
 				border-radius: 0.5rem;
 				margin-bottom: 1rem;
 			}
+			body.dark .message {
+				background-color: #374151;
+			}
 			.input-area {
 				background-color: #f3f4f6;
 				padding: 1rem;
@@ -51,6 +54,21 @@
 				display: flex;
 				gap: 1rem;
 				flex-wrap: wrap;
+			}
+			body.dark .input-area {
+				background-color: #374151;
+			}
+			#chat-output {
+				color: #22c55e;
+			}
+			body.dark #chat-output {
+				color: #4ade80;
+			}
+			#live-counter {
+				color: #3b82f6;
+			}
+			body.dark #live-counter {
+				color: #60a5fa;
 			}
 			input,
 			button,
@@ -91,8 +109,60 @@
 				padding: 1rem 2rem;
 				border-bottom: 1px solid #e5e7eb;
 				display: flex;
-				justify-content: space-between;
-				align-items: center;
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			@media (min-width: 768px) {
+				header {
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					gap: 0;
+				}
+			}
+
+			nav {
+				display: flex;
+				gap: 0.5rem;
+				justify-content: center;
+			}
+
+			@media (min-width: 768px) {
+				nav {
+					justify-content: flex-end;
+				}
+			}
+
+			@media (max-width: 768px) {
+				h1 {
+					text-align: center;
+				}
+
+				nav {
+					flex-wrap: wrap;
+				}
+			}
+
+			nav a {
+				color: #059669;
+				text-decoration: none;
+				padding: 0.5rem 0.75rem;
+				border-radius: 0.375rem;
+				font-size: 0.875rem;
+				white-space: nowrap;
+			}
+
+			@media (min-width: 768px) {
+				nav a {
+					margin-left: 1rem;
+					padding: 0.5rem 1rem;
+					font-size: 1rem;
+				}
+			}
+
+			nav a:hover {
+				text-decoration: underline;
 			}
 
 			body.dark header {
@@ -100,17 +170,8 @@
 				color: var(--text-dark);
 			}
 
-			nav a {
-				margin-left: 1rem;
-				color: #3b82f6;
-				text-decoration: none;
-			}
-			nav a:hover {
-				text-decoration: underline;
-			}
-
 			body.dark nav a {
-				color: #f3f4f6;
+				color: #34d399;
 			}
 
 			footer {
@@ -137,7 +198,6 @@
 				<a href="#calculator">Calculator</a>
 				<a href="#how-it-works">How it works</a>
 				<a href="#about">About</a>
-				<a href="#tips">Tips</a>
 				<a href="#faq">FAQ</a>
 				<a href="#famous-salaries">Famous Salaries</a>
 				<button
