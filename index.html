@@ -760,6 +760,8 @@
 				document.getElementById("salary-period").value = "annual";
 				document.getElementById("time-period").value = "weekly";
 				calculate();
+				// Scroll to top smoothly
+				window.scrollTo({ top: 0, behavior: "smooth" });
 			}
 
 			window.addEventListener("DOMContentLoaded", () => {
