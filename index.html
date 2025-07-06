@@ -109,60 +109,185 @@
 				padding: 1rem 2rem;
 				border-bottom: 1px solid #e5e7eb;
 				display: flex;
-				flex-direction: column;
-				gap: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				header {
-					flex-direction: row;
-					justify-content: space-between;
-					align-items: center;
-					gap: 0;
-				}
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
 			}
 
 			nav {
 				display: flex;
 				gap: 0.5rem;
-				justify-content: center;
+				align-items: center;
 			}
 
-			@media (min-width: 768px) {
-				nav {
-					justify-content: flex-end;
-				}
+			.nav-item {
+				position: relative;
+				display: inline-block;
 			}
 
-			@media (max-width: 768px) {
-				h1 {
-					text-align: center;
-				}
-
-				nav {
-					flex-wrap: wrap;
-				}
-			}
-
-			nav a {
+			.nav-item > a {
 				color: #059669;
 				text-decoration: none;
-				padding: 0.5rem 0.75rem;
+				padding: 0.5rem 1rem;
 				border-radius: 0.375rem;
 				font-size: 0.875rem;
 				white-space: nowrap;
+				display: block;
+				transition: all 0.2s ease;
+				position: relative;
 			}
 
-			@media (min-width: 768px) {
-				nav a {
-					margin-left: 1rem;
-					padding: 0.5rem 1rem;
-					font-size: 1rem;
+			.nav-item.has-dropdown > a::after {
+				content: "▼";
+				font-size: 0.7rem;
+				margin-left: 0.5rem;
+				transition: transform 0.2s ease;
+			}
+
+			.nav-item.has-dropdown:hover > a::after {
+				transform: rotate(180deg);
+			}
+
+			.nav-item > a:hover {
+				background-color: #ecfdf5;
+				color: #047857;
+			}
+
+			.dropdown {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background-color: white;
+				border: 1px solid #e5e7eb;
+				border-radius: 0.5rem;
+				box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+				min-width: 200px;
+				z-index: 1000;
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-10px);
+				transition: all 0.2s ease;
+			}
+
+			.nav-item:hover .dropdown {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			.dropdown a {
+				color: #374151;
+				text-decoration: none;
+				padding: 0.75rem 1rem;
+				display: block;
+				font-size: 0.875rem;
+				transition: all 0.2s ease;
+				border-radius: 0;
+			}
+
+			.dropdown a:hover {
+				background-color: #f3f4f6;
+				color: #059669;
+			}
+
+			.dropdown a:first-child {
+				border-top-left-radius: 0.5rem;
+				border-top-right-radius: 0.5rem;
+			}
+
+			.dropdown a:last-child {
+				border-bottom-left-radius: 0.5rem;
+				border-bottom-right-radius: 0.5rem;
+			}
+
+			.hamburger {
+				display: none;
+				flex-direction: column;
+				cursor: pointer;
+				padding: 0.5rem;
+			}
+
+			.hamburger span {
+				width: 25px;
+				height: 3px;
+				background-color: #059669;
+				margin: 2px 0;
+				transition: 0.3s;
+			}
+
+			.mobile-menu {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				background-color: white;
+				border-top: 1px solid #e5e7eb;
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+				z-index: 1000;
+			}
+
+			.mobile-menu.active {
+				display: block;
+			}
+
+			.mobile-menu a {
+				color: #374151;
+				text-decoration: none;
+				padding: 1rem 2rem;
+				display: block;
+				border-bottom: 1px solid #f3f4f6;
+				transition: all 0.2s ease;
+			}
+
+			.mobile-menu a:hover {
+				background-color: #f9fafb;
+				color: #059669;
+			}
+
+			.mobile-menu a:last-child {
+				border-bottom: none;
+			}
+
+			@media (max-width: 768px) {
+				header {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 0;
+				}
+
+				nav {
+					display: none;
+				}
+
+				.hamburger {
+					display: flex;
+					position: absolute;
+					top: 1rem;
+					right: 2rem;
+				}
+
+				.hamburger.active span:nth-child(1) {
+					transform: rotate(-45deg) translate(-5px, 6px);
+				}
+
+				.hamburger.active span:nth-child(2) {
+					opacity: 0;
+				}
+
+				.hamburger.active span:nth-child(3) {
+					transform: rotate(45deg) translate(-5px, -6px);
+				}
+
+				h1 {
+					text-align: left;
 				}
 			}
 
-			nav a:hover {
-				text-decoration: underline;
+			@media (min-width: 769px) {
+				.nav-item > a {
+					font-size: 1rem;
+				}
 			}
 
 			body.dark header {
@@ -170,8 +295,46 @@
 				color: var(--text-dark);
 			}
 
-			body.dark nav a {
+			body.dark .nav-item > a {
 				color: #34d399;
+			}
+
+			body.dark .nav-item > a:hover {
+				background-color: #064e3b;
+				color: #6ee7b7;
+			}
+
+			body.dark .dropdown {
+				background-color: #374151;
+				border-color: #4b5563;
+			}
+
+			body.dark .dropdown a {
+				color: #f9fafb;
+			}
+
+			body.dark .dropdown a:hover {
+				background-color: #4b5563;
+				color: #34d399;
+			}
+
+			body.dark .mobile-menu {
+				background-color: #374151;
+				border-color: #4b5563;
+			}
+
+			body.dark .mobile-menu a {
+				color: #f9fafb;
+				border-color: #4b5563;
+			}
+
+			body.dark .mobile-menu a:hover {
+				background-color: #4b5563;
+				color: #34d399;
+			}
+
+			body.dark .hamburger span {
+				background-color: #34d399;
 			}
 
 			footer {
@@ -195,11 +358,29 @@
 		<header>
 			<h1 class="text-xl font-bold">Salary Calculator</h1>
 			<nav>
-				<a href="#calculator">Calculator</a>
-				<a href="#how-it-works">How it works</a>
-				<a href="#about">About</a>
-				<a href="#faq">FAQ</a>
-				<a href="#famous-salaries">Famous Salaries</a>
+				<div class="nav-item">
+					<a href="#calculator">Calculator</a>
+				</div>
+				<div class="nav-item">
+					<a href="#features">Features</a>
+				</div>
+				<div class="nav-item has-dropdown">
+					<a href="#about">About</a>
+					<div class="dropdown">
+						<a href="#how-it-works">How It Works</a>
+						<a href="#use-cases">Use Cases</a>
+						<a href="#privacy">Privacy</a>
+					</div>
+				</div>
+				<div class="nav-item has-dropdown">
+					<a href="#resources">Resources</a>
+					<div class="dropdown">
+						<a href="#famous-salaries">Famous Salaries</a>
+						<a href="#feedback">Feedback</a>
+						<a href="#changelog">Updates</a>
+						<a href="#faq">FAQ</a>
+					</div>
+				</div>
 				<button
 					onclick="toggleTheme()"
 					class="ml-4 border px-2 py-1 rounded"
@@ -207,6 +388,25 @@
 					🌓
 				</button>
 			</nav>
+			<div class="hamburger" onclick="toggleMobileMenu()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="mobile-menu" id="mobileMenu">
+				<a href="#calculator">Calculator</a>
+				<a href="#features">Features</a>
+				<a href="#how-it-works">How It Works</a>
+				<a href="#use-cases">Use Cases</a>
+				<a href="#famous-salaries">Famous Salaries</a>
+				<a href="#privacy">Privacy</a>
+				<a href="#feedback">Feedback</a>
+				<a href="#changelog">Updates</a>
+				<a href="#faq">FAQ</a>
+				<a href="#" onclick="toggleTheme(); return false;"
+					>🌓 Toggle Theme</a
+				>
+			</div>
 		</header>
 
 		<main class="chat-box">
@@ -372,8 +572,9 @@
 					</button>
 				</div>
 				<p class="mt-4 text-sm text-gray-600 text-center text-theme">
-					Choose your salary period and working hours to calculate
-					your earnings per second
+					Calculate your earnings in any time period you prefer - from
+					seconds to months. Choose your salary format, working hours,
+					currency, and output period for personalized results.
 				</p>
 			</section>
 
@@ -463,11 +664,23 @@
 				<dl class="space-y-4 text-gray-700 text-theme">
 					<div>
 						<dt class="font-semibold">
-							Is my data saved or shared?
+							Is my salary data saved or shared?
 						</dt>
 						<dd>
 							No. All calculations happen locally in your browser,
-							ensuring privacy.
+							ensuring complete privacy. No data is ever sent to
+							our servers.
+						</dd>
+					</div>
+					<div>
+						<dt class="font-semibold">
+							How accurate are the calculations?
+						</dt>
+						<dd>
+							The calculations are mathematically precise based on
+							your inputs. We convert everything to annual figures
+							and divide by the appropriate time periods for
+							accurate results.
 						</dd>
 					</div>
 					<div>
@@ -476,16 +689,51 @@
 						</dt>
 						<dd>
 							To give you a dynamic and real-time visualization of
-							your earnings as time passes.
+							your earnings as time passes, regardless of your
+							chosen output period.
 						</dd>
 					</div>
 					<div>
 						<dt class="font-semibold">
-							Can I use this tool for hourly or monthly salary?
+							Can I use this for freelance or contract work?
 						</dt>
 						<dd>
-							You can convert your salary to annual figures and
-							input those values for accurate results.
+							Absolutely! This tool is perfect for freelancers to
+							understand their hourly value and set competitive
+							rates.
+						</dd>
+					</div>
+					<div>
+						<dt class="font-semibold">
+							Are taxes included in the calculations?
+						</dt>
+						<dd>
+							No, all calculations are based on gross income. You
+							should factor in taxes, benefits, and other
+							deductions separately.
+						</dd>
+					</div>
+					<div>
+						<dt class="font-semibold">
+							What currencies are supported?
+						</dt>
+						<dd>
+							We support 50+ major global currencies including
+							EUR, USD, GBP, JPY, and many regional currencies.
+						</dd>
+					</div>
+					<div>
+						<dt class="font-semibold">
+							How do I report a bug or request a feature?
+						</dt>
+						<dd>
+							Please email us at
+							<a
+								href="mailto:info@wesselvandenijssel.nl?subject=Salary Calculator Feedback"
+								class="text-blue-600 dark:text-blue-400 hover:underline"
+								>info@wesselvandenijssel.nl</a
+							>
+							with your feedback, suggestions, or bug reports.
 						</dd>
 					</div>
 				</dl>
@@ -558,6 +806,249 @@
 					converted to EUR. Assumes 40 hours/week, 52 weeks/year for
 					comparison purposes.
 				</p>
+			</section>
+
+			<section id="features" class="mt-16">
+				<h2 class="text-xl font-semibold mb-4 text-theme">Features</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+						<h3 class="font-semibold text-theme mb-2">
+							💰 Multiple Salary Formats
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Input your salary as annual, monthly, or hourly
+							rates with flexible working hour periods.
+						</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+						<h3 class="font-semibold text-theme mb-2">
+							🌍 Global Currency Support
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Calculate in 50+ currencies including EUR, USD, GBP,
+							JPY, and many more.
+						</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+						<h3 class="font-semibold text-theme mb-2">
+							⏱️ Real-Time Counter
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Watch your earnings accumulate in real-time with our
+							live counter feature.
+						</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+						<h3 class="font-semibold text-theme mb-2">
+							🎯 Flexible Output Periods
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							View results per second, minute, day, week, biweek,
+							or month.
+						</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+						<h3 class="font-semibold text-theme mb-2">
+							🌟 Famous Salaries
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Compare with CEO salaries and industry benchmarks
+							for perspective.
+						</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+						<h3 class="font-semibold text-theme mb-2">
+							🔒 Privacy First
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							All calculations happen locally in your browser. No
+							data is stored or transmitted.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="use-cases" class="mt-16">
+				<h2 class="text-xl font-semibold mb-4 text-theme">Use Cases</h2>
+				<div class="space-y-4">
+					<div class="border-l-4 border-blue-500 pl-4">
+						<h3 class="font-semibold text-theme mb-2">
+							💼 Salary Negotiation
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
+							Understand your hourly value to negotiate better
+							compensation packages and justify raises.
+						</p>
+					</div>
+					<div class="border-l-4 border-green-500 pl-4">
+						<h3 class="font-semibold text-theme mb-2">
+							📊 Financial Planning
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
+							Break down your earnings into different time periods
+							for better budgeting and financial planning.
+						</p>
+					</div>
+					<div class="border-l-4 border-purple-500 pl-4">
+						<h3 class="font-semibold text-theme mb-2">
+							🚀 Motivation & Productivity
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
+							Watch your real-time earnings to stay motivated
+							during work sessions and meetings.
+						</p>
+					</div>
+					<div class="border-l-4 border-orange-500 pl-4">
+						<h3 class="font-semibold text-theme mb-2">
+							🔍 Career Comparison
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
+							Compare different job offers and career paths by
+							understanding their true hourly value.
+						</p>
+					</div>
+					<div class="border-l-4 border-red-500 pl-4">
+						<h3 class="font-semibold text-theme mb-2">
+							💡 Freelance Pricing
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
+							Set competitive freelance rates by understanding
+							your target earnings per hour.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="privacy" class="mt-16">
+				<h2 class="text-xl font-semibold mb-4 text-theme">
+					Privacy & Security
+				</h2>
+				<div
+					class="bg-green-50 dark:bg-green-900 p-4 rounded-lg border border-green-200 dark:border-green-700"
+				>
+					<h3
+						class="font-semibold text-green-800 dark:text-green-200 mb-2"
+					>
+						🔐 Your Data Stays Private
+					</h3>
+					<ul
+						class="text-green-700 dark:text-green-300 space-y-1 text-sm"
+					>
+						<li>
+							• All calculations are performed locally in your
+							browser
+						</li>
+						<li>• No salary data is ever sent to our servers</li>
+						<li>• No tracking or analytics cookies are used</li>
+						<li>• No user accounts or registration required</li>
+						<li>• Open-source and transparent calculations</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="feedback" class="mt-16">
+				<h2 class="text-xl font-semibold mb-4 text-theme">
+					Feedback & Support
+				</h2>
+				<div
+					class="bg-blue-50 dark:bg-blue-900 p-6 rounded-lg border border-blue-200 dark:border-blue-700"
+				>
+					<h3
+						class="font-semibold text-blue-800 dark:text-blue-200 mb-3"
+					>
+						We'd Love to Hear From You!
+					</h3>
+					<p class="text-blue-700 dark:text-blue-300 mb-4">
+						Have suggestions, found a bug, or want to share how this
+						tool helped you? We're always looking to improve!
+					</p>
+					<div class="space-y-3">
+						<div>
+							<h4
+								class="font-medium text-blue-800 dark:text-blue-200"
+							>
+								📧 Email Us:
+							</h4>
+							<a
+								href="mailto:info@wesselvandenijssel.nl?subject=Salary Calculator Feedback"
+								class="text-blue-600 dark:text-blue-400 hover:underline"
+							>
+								info@wesselvandenijssel.nl
+							</a>
+						</div>
+						<div>
+							<h4
+								class="font-medium text-blue-800 dark:text-blue-200"
+							>
+								💬 What to Include:
+							</h4>
+							<ul
+								class="text-blue-700 dark:text-blue-300 text-sm space-y-1"
+							>
+								<li>• Feature requests or improvement ideas</li>
+								<li>• Bug reports or technical issues</li>
+								<li>• Currency or functionality suggestions</li>
+								<li>
+									• General feedback about your experience
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="changelog" class="mt-16">
+				<h2 class="text-xl font-semibold mb-4 text-theme">
+					Recent Updates
+				</h2>
+				<div class="space-y-4">
+					<div class="border-l-4 border-green-500 pl-4">
+						<h3 class="font-semibold text-theme">
+							v2.0 - January 2025
+						</h3>
+						<ul
+							class="text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1"
+						>
+							<li>
+								• Added flexible output periods (second, minute,
+								day, week, biweek, month)
+							</li>
+							<li>
+								• Improved live counter accuracy for all time
+								periods
+							</li>
+							<li>• Enhanced mobile responsiveness</li>
+						</ul>
+					</div>
+					<div class="border-l-4 border-blue-500 pl-4">
+						<h3 class="font-semibold text-theme">
+							v1.5 - December 2024
+						</h3>
+						<ul
+							class="text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1"
+						>
+							<li>• Added 50+ global currencies support</li>
+							<li>
+								• Introduced famous people's salaries section
+							</li>
+							<li>• Enhanced dark mode support</li>
+						</ul>
+					</div>
+					<div class="border-l-4 border-purple-500 pl-4">
+						<h3 class="font-semibold text-theme">
+							v1.0 - November 2024
+						</h3>
+						<ul
+							class="text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1"
+						>
+							<li>
+								• Initial release with basic salary calculation
+							</li>
+							<li>• Real-time earnings counter</li>
+							<li>• Multiple salary input formats</li>
+						</ul>
+					</div>
+				</div>
 			</section>
 
 			<section id="call-to-action" class="mt-16 text-center">
@@ -849,6 +1340,27 @@
 				body.classList.toggle("dark");
 				body.classList.toggle("light");
 			}
+
+			function toggleMobileMenu() {
+				const hamburger = document.querySelector(".hamburger");
+				const mobileMenu = document.getElementById("mobileMenu");
+
+				hamburger.classList.toggle("active");
+				mobileMenu.classList.toggle("active");
+			}
+
+			// Close mobile menu when clicking on a link
+			document.addEventListener("DOMContentLoaded", function () {
+				const mobileMenuLinks =
+					document.querySelectorAll(".mobile-menu a");
+				mobileMenuLinks.forEach((link) => {
+					link.addEventListener("click", function () {
+						if (this.getAttribute("href") !== "#") {
+							toggleMobileMenu();
+						}
+					});
+				});
+			});
 		</script>
 	</body>
 </html>
