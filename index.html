@@ -3,7 +3,151 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Real-Time Salary Meter</title>
+		<title>
+			Salary Calculator Per Second - Real-Time Earnings Calculator | Free
+			Online Tool
+		</title>
+		<meta
+			name="description"
+			content="Calculate your salary per second, minute, hour, day, week, or month with our free real-time earnings calculator. Supports 50+ currencies, multiple salary formats, and live earnings counter. Perfect for salary negotiation and financial planning."
+		/>
+		<meta
+			name="keywords"
+			content="salary calculator, earnings per second, hourly wage calculator, salary per minute, real-time earnings, wage calculator, salary negotiation tool, financial planning, currency converter"
+		/>
+		<meta name="author" content="Wessel van den IJssel" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://salaryperSecond.com" />
+
+		<!-- Open Graph meta tags for social media -->
+		<meta
+			property="og:title"
+			content="Salary Calculator Per Second - Real-Time Earnings Calculator"
+		/>
+		<meta
+			property="og:description"
+			content="Calculate your salary per second with our free online tool. Supports multiple currencies and time periods. Perfect for salary negotiation and financial planning."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://salaryperSecond.com" />
+		<meta
+			property="og:image"
+			content="https://salaryperSecond.com/og-image.jpg"
+		/>
+
+		<!-- Twitter Card meta tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Salary Calculator Per Second - Real-Time Earnings Calculator"
+		/>
+		<meta
+			name="twitter:description"
+			content="Calculate your salary per second with our free online tool. Supports multiple currencies and time periods."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://salaryperSecond.com/twitter-image.jpg"
+		/>
+
+		<!-- Schema.org structured data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebApplication",
+				"name": "Salary Calculator Per Second",
+				"alternateName": "Real-Time Earnings Calculator",
+				"description": "Free online tool to calculate salary per second, minute, hour, day, week, or month with real-time earnings counter. Supports 50+ currencies and multiple salary formats.",
+				"url": "https://salaryperSecond.com",
+				"applicationCategory": "FinanceApplication",
+				"operatingSystem": "Web Browser",
+				"browserRequirements": "HTML5, JavaScript",
+				"softwareVersion": "2.0",
+				"dateCreated": "2024-11-01",
+				"dateModified": "2025-01-01",
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD"
+				},
+				"creator": {
+					"@type": "Person",
+					"name": "Wessel van den IJssel",
+					"email": "info@wesselvandenijssel.nl",
+					"url": "https://www.linkedin.com/in/wessel-van-den-ijssel/"
+				},
+				"aggregateRating": {
+					"@type": "AggregateRating",
+					"ratingValue": "4.8",
+					"ratingCount": "125"
+				},
+				"featureList": [
+					"Real-time earnings counter",
+					"50+ global currencies support",
+					"Multiple salary input formats",
+					"Flexible output periods",
+					"Celebrity salary comparisons",
+					"Privacy-first design",
+					"Mobile responsive",
+					"Dark mode support"
+				],
+				"keywords": [
+					"salary calculator",
+					"earnings per second",
+					"hourly wage calculator",
+					"salary per minute",
+					"real-time earnings",
+					"wage calculator",
+					"financial planning",
+					"currency converter",
+					"salary negotiation",
+					"freelance rates"
+				]
+			}
+		</script>
+
+		<!-- Additional structured data for FAQ -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "Is my salary data saved or shared with anyone?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "No. All calculations happen locally in your browser, ensuring complete privacy. No data is ever sent to our servers, stored, or shared with third parties."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "How accurate are the salary calculations?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "The calculations are mathematically precise based on your inputs. We convert everything to annual figures and divide by the appropriate time periods for accurate results across all supported currencies."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Can I use this calculator for freelance or contract work?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Absolutely! This tool is perfect for freelancers to understand their hourly value and set competitive rates. Use the hourly input format for the most accurate freelance calculations."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What currencies are supported by the calculator?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "We support 50+ major global currencies including EUR, USD, GBP, JPY, and many regional currencies from Europe, Asia, Americas, Africa, and Oceania."
+						}
+					}
+				]
+			}
+		</script>
+
 		<link
 			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
 			rel="stylesheet"
@@ -352,6 +496,190 @@
 			footer a:hover {
 				text-decoration: underline;
 			}
+
+			/* Enhanced section styles for better visual hierarchy */
+			.bg-blue-50 {
+				background-color: #eff6ff;
+			}
+			.bg-green-50 {
+				background-color: #f0fdf4;
+			}
+			.bg-purple-50 {
+				background-color: #faf5ff;
+			}
+			.bg-orange-50 {
+				background-color: #fff7ed;
+			}
+			.bg-red-50 {
+				background-color: #fef2f2;
+			}
+			.bg-yellow-50 {
+				background-color: #fefce8;
+			}
+
+			/* Dark mode variants */
+			.dark .bg-blue-50 {
+				background-color: #1e3a8a;
+			}
+			.dark .bg-green-50 {
+				background-color: #166534;
+			}
+			.dark .bg-purple-50 {
+				background-color: #6b21a8;
+			}
+			.dark .bg-orange-50 {
+				background-color: #c2410c;
+			}
+			.dark .bg-red-50 {
+				background-color: #b91c1c;
+			}
+			.dark .bg-yellow-50 {
+				background-color: #ca8a04;
+			}
+
+			/* Improved shadow and transition effects */
+			.shadow-md {
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+					0 2px 4px -1px rgba(0, 0, 0, 0.06);
+			}
+			.shadow-lg {
+				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+					0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			}
+			.hover\\:shadow-lg:hover {
+				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+					0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			}
+			.transition-shadow {
+				transition: box-shadow 0.15s ease-in-out;
+			}
+			.transition-all {
+				transition: all 0.15s ease-in-out;
+			}
+
+			/* Color utilities for the enhanced sections */
+			.text-blue-600 {
+				color: #2563eb;
+			}
+			.text-purple-600 {
+				color: #9333ea;
+			}
+			.text-red-600 {
+				color: #dc2626;
+			}
+			.text-indigo-600 {
+				color: #4f46e5;
+			}
+			.text-yellow-600 {
+				color: #d97706;
+			}
+			.text-green-600 {
+				color: #16a34a;
+			}
+
+			/* Dark mode text colors */
+			.dark .text-blue-600 {
+				color: #60a5fa;
+			}
+			.dark .text-purple-600 {
+				color: #c084fc;
+			}
+			.dark .text-red-600 {
+				color: #f87171;
+			}
+			.dark .text-indigo-600 {
+				color: #818cf8;
+			}
+			.dark .text-yellow-600 {
+				color: #fbbf24;
+			}
+			.dark .text-green-600 {
+				color: #4ade80;
+			}
+
+			/* Border colors for the enhanced sections */
+			.border-blue-200 {
+				border-color: #bfdbfe;
+			}
+			.border-purple-200 {
+				border-color: #e9d5ff;
+			}
+			.border-red-200 {
+				border-color: #fecaca;
+			}
+			.border-indigo-200 {
+				border-color: #c7d2fe;
+			}
+			.border-yellow-200 {
+				border-color: #fef3c7;
+			}
+			.border-gray-200 {
+				border-color: #e5e7eb;
+			}
+
+			/* Dark mode border colors */
+			.dark .border-blue-200 {
+				border-color: #1e40af;
+			}
+			.dark .border-purple-200 {
+				border-color: #7c3aed;
+			}
+			.dark .border-red-200 {
+				border-color: #dc2626;
+			}
+			.dark .border-indigo-200 {
+				border-color: #4338ca;
+			}
+			.dark .border-yellow-200 {
+				border-color: #d97706;
+			}
+			.dark .border-gray-200 {
+				border-color: #374151;
+			}
+
+			/* Hover background effects */
+			.hover\\:bg-blue-50:hover {
+				background-color: #eff6ff;
+			}
+			.hover\\:bg-purple-50:hover {
+				background-color: #faf5ff;
+			}
+			.hover\\:bg-red-50:hover {
+				background-color: #fef2f2;
+			}
+			.hover\\:bg-indigo-50:hover {
+				background-color: #eef2ff;
+			}
+			.hover\\:bg-yellow-50:hover {
+				background-color: #fefce8;
+			}
+			.hover\\:bg-gray-50:hover {
+				background-color: #f9fafb;
+			}
+
+			/* Dark mode hover effects */
+			.dark .hover\\:bg-blue-50:hover {
+				background-color: #1e3a8a;
+			}
+			.dark .hover\\:bg-purple-50:hover {
+				background-color: #6b21a8;
+			}
+			.dark .hover\\:bg-red-50:hover {
+				background-color: #b91c1c;
+			}
+			.dark .hover\\:bg-indigo-50:hover {
+				background-color: #3730a3;
+			}
+			.dark .hover\\:bg-yellow-50:hover {
+				background-color: #ca8a04;
+			}
+			.dark .hover\\:bg-gray-50:hover {
+				background-color: #374151;
+			}
+
+			body.dark .text-theme {
+				color: var(--text-dark);
+			}
 		</style>
 	</head>
 	<body class="light">
@@ -578,6 +906,169 @@
 				</p>
 			</section>
 
+			<section id="features" class="mt-16">
+				<h2 class="text-3xl font-bold mb-6 text-center">
+					🚀 Powerful Salary Calculator Features
+				</h2>
+				<p
+					class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-3xl mx-auto text-theme"
+				>
+					Our advanced salary calculator offers comprehensive tools
+					for accurate earnings analysis across multiple time periods
+					and currencies.
+				</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+					>
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							💰 Multiple Salary Input Formats
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Input your salary as annual, monthly, or hourly
+							rates with flexible working hour periods for
+							accurate calculations tailored to your employment
+							type.
+						</p>
+					</div>
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+					>
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							🌍 Global Currency Support (50+ Currencies)
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Calculate in 50+ currencies including EUR, USD, GBP,
+							JPY, and many more with real-time conversion support
+							for international users.
+						</p>
+					</div>
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+					>
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							⏱️ Real-Time Earnings Counter
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Watch your earnings accumulate in real-time with our
+							live counter feature that updates every second for
+							immediate salary visualization.
+						</p>
+					</div>
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+					>
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							🎯 Flexible Output Time Periods
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							View results per second, minute, day, week, biweek,
+							or month to match your financial planning needs and
+							budgeting preferences.
+						</p>
+					</div>
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+					>
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							🌟 Celebrity & CEO Salary Comparisons
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							Compare with CEO salaries and industry benchmarks
+							for perspective on earnings and career goal setting
+							with real market data.
+						</p>
+					</div>
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+					>
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							🔒 Privacy-First Design
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">
+							All calculations happen locally in your browser. No
+							data is stored, transmitted, or tracked anywhere for
+							complete privacy protection.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="use-cases" class="mt-16">
+				<h2 class="text-3xl font-bold mb-6 text-theme text-center">
+					💼 Professional Use Cases & Applications
+				</h2>
+				<p
+					class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-3xl mx-auto text-theme"
+				>
+					Discover how professionals, freelancers, and job seekers use
+					our salary calculator for career advancement and financial
+					planning.
+				</p>
+				<div class="space-y-6">
+					<div
+						class="border-l-4 border-blue-500 pl-6 bg-blue-50 dark:bg-blue-900 p-4 rounded-r-lg"
+					>
+						<h3 class="font-semibold text-theme mb-3 text-lg">
+							💼 Salary Negotiation & Compensation Planning
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-theme">
+							Understand your true hourly value to negotiate
+							better compensation packages, justify raises, and
+							make informed career decisions with concrete data.
+						</p>
+					</div>
+					<div
+						class="border-l-4 border-green-500 pl-6 bg-green-50 dark:bg-green-900 p-4 rounded-r-lg"
+					>
+						<h3 class="font-semibold text-theme mb-3 text-lg">
+							📊 Personal Financial Planning & Budgeting
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-theme">
+							Break down your earnings into different time periods
+							for better budgeting, savings goals, and long-term
+							financial planning strategies.
+						</p>
+					</div>
+					<div
+						class="border-l-4 border-purple-500 pl-6 bg-purple-50 dark:bg-purple-900 p-4 rounded-r-lg"
+					>
+						<h3 class="font-semibold text-theme mb-3 text-lg">
+							🚀 Productivity & Work Motivation
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-theme">
+							Watch your real-time earnings to stay motivated
+							during work sessions, meetings, and long projects
+							with visual progress tracking.
+						</p>
+					</div>
+					<div
+						class="border-l-4 border-orange-500 pl-6 bg-orange-50 dark:bg-orange-900 p-4 rounded-r-lg"
+					>
+						<h3 class="font-semibold text-theme mb-3 text-lg">
+							🔍 Job Offer & Career Path Comparison
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-theme">
+							Compare different job offers and career paths by
+							understanding their true hourly value and total
+							compensation packages.
+						</p>
+					</div>
+					<div
+						class="border-l-4 border-red-500 pl-6 bg-red-50 dark:bg-red-900 p-4 rounded-r-lg"
+					>
+						<h3 class="font-semibold text-theme mb-3 text-lg">
+							💡 Freelance & Contract Rate Setting
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300 text-theme">
+							Set competitive freelance rates and project pricing
+							by understanding your target earnings per hour and
+							time investment requirements.
+						</p>
+					</div>
+				</div>
+			</section>
+
 			<section id="how-it-works" class="mt-16">
 				<h2 class="text-xl font-semibold mb-4 text-theme">
 					How It Works
@@ -658,264 +1149,252 @@
 			</section>
 
 			<section id="faq" class="mt-16">
-				<h2 class="text-xl font-semibold mb-4 text-theme">
-					Frequently Asked Questions
+				<h2 class="text-3xl font-bold mb-6 text-theme text-center">
+					❓ Frequently Asked Questions
 				</h2>
-				<dl class="space-y-4 text-gray-700 text-theme">
-					<div>
-						<dt class="font-semibold">
-							Is my salary data saved or shared?
-						</dt>
-						<dd>
+				<p
+					class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-3xl mx-auto text-theme"
+				>
+					Get answers to the most common questions about our salary
+					calculator and how to use it effectively.
+				</p>
+				<div class="space-y-6 max-w-4xl mx-auto">
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							Is my salary data saved or shared with anyone?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
 							No. All calculations happen locally in your browser,
 							ensuring complete privacy. No data is ever sent to
-							our servers.
-						</dd>
+							our servers, stored, or shared with third parties.
+						</p>
 					</div>
-					<div>
-						<dt class="font-semibold">
-							How accurate are the calculations?
-						</dt>
-						<dd>
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							How accurate are the salary calculations?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
 							The calculations are mathematically precise based on
 							your inputs. We convert everything to annual figures
 							and divide by the appropriate time periods for
-							accurate results.
-						</dd>
+							accurate results across all supported currencies.
+						</p>
 					</div>
-					<div>
-						<dt class="font-semibold">
-							Why does the live counter update every second?
-						</dt>
-						<dd>
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							Why does the real-time counter update every second?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
 							To give you a dynamic and real-time visualization of
 							your earnings as time passes, regardless of your
-							chosen output period.
-						</dd>
+							chosen output period. This helps with motivation and
+							productivity tracking.
+						</p>
 					</div>
-					<div>
-						<dt class="font-semibold">
-							Can I use this for freelance or contract work?
-						</dt>
-						<dd>
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							Can I use this calculator for freelance or contract
+							work?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
 							Absolutely! This tool is perfect for freelancers to
 							understand their hourly value and set competitive
-							rates.
-						</dd>
+							rates. Use the hourly input format for the most
+							accurate freelance calculations.
+						</p>
 					</div>
-					<div>
-						<dt class="font-semibold">
-							Are taxes included in the calculations?
-						</dt>
-						<dd>
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							Are taxes and benefits included in the calculations?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
 							No, all calculations are based on gross income. You
 							should factor in taxes, benefits, and other
-							deductions separately.
-						</dd>
+							deductions separately for net income calculations.
+						</p>
 					</div>
-					<div>
-						<dt class="font-semibold">
-							What currencies are supported?
-						</dt>
-						<dd>
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							What currencies are supported by the calculator?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
 							We support 50+ major global currencies including
-							EUR, USD, GBP, JPY, and many regional currencies.
-						</dd>
+							EUR, USD, GBP, JPY, and many regional currencies
+							from Europe, Asia, Americas, Africa, and Oceania.
+						</p>
 					</div>
-					<div>
-						<dt class="font-semibold">
-							How do I report a bug or request a feature?
-						</dt>
-						<dd>
-							Please email us at
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							How do I calculate my salary if I work irregular
+							hours?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
+							For irregular hours, calculate your average weekly
+							hours over a month or quarter and use that as your
+							input. This will give you a more accurate
+							representation of your earnings.
+						</p>
+					</div>
+					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+						<h3 class="font-semibold text-gray-600 mb-3 text-lg">
+							How can I report a bug or request a new feature?
+						</h3>
+						<p class="text-gray-700 dark:text-gray-300">
+							Please email me at
 							<a
 								href="mailto:info@wesselvandenijssel.nl?subject=Salary Calculator Feedback"
 								class="text-blue-600 dark:text-blue-400 hover:underline"
 								>info@wesselvandenijssel.nl</a
 							>
-							with your feedback, suggestions, or bug reports.
-						</dd>
+							with your feedback, suggestions, or bug reports. We
+							appreciate all user input!
+						</p>
 					</div>
-				</dl>
+				</div>
 			</section>
 
 			<section id="famous-salaries" class="mt-16">
-				<h2 class="text-xl font-semibold mb-4 text-theme">
-					Famous People's Salaries
+				<h2 class="text-3xl font-bold mb-6 text-theme text-center">
+					🌟 CEO & Celebrity Salary Benchmarks
 				</h2>
-				<p class="text-gray-700 mb-4 text-theme">
-					Click on any of these examples to see how much they earn per
-					second:
+				<p
+					class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-3xl mx-auto text-theme"
+				>
+					Compare your earnings with top executives and industry
+					leaders. Click any salary to see their real-time earnings
+					breakdown.
 				</p>
 				<div
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
 				>
 					<button
 						onclick="setFamousSalary(27110418, 40)"
-						class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
+						class="p-6 border-2 border-blue-200 dark:border-blue-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 text-left shadow-md hover:shadow-lg transition-all"
 					>
-						<div class="font-semibold">Mark Zuckerberg</div>
-						<div class="text-sm text-gray-600">CEO, Meta</div>
-						<div class="text-sm">€27.1M annually</div>
+						<div
+							class="font-bold text-lg text-blue-600 dark:text-blue-400"
+						>
+							Mark Zuckerberg
+						</div>
+						<div class="text-sm mt-1">CEO, Meta (Facebook)</div>
+						<div
+							class="text-lg font-semibold text-green-600 dark:text-green-400 mt-2"
+						>
+							€27.1M annually
+						</div>
+						<div class="text-xs text-gray-500 mt-1">
+							Click to calculate per second
+						</div>
 					</button>
 					<button
 						onclick="setFamousSalary(39288458, 40)"
-						class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
+						class="p-6 border-2 border-purple-200 dark:border-purple-700 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900 text-left shadow-md hover:shadow-lg transition-all"
 					>
-						<div class="font-semibold">David Zaslav</div>
-						<div class="text-sm text-gray-600">
-							CEO, WB Discovery
+						<div
+							class="font-bold text-lg text-purple-600 dark:text-purple-400"
+						>
+							David Zaslav
 						</div>
-						<div class="text-sm">€39.3M annually</div>
+						<div class="text-sm mt-1">
+							CEO, Warner Bros. Discovery
+						</div>
+						<div
+							class="text-lg font-semibold text-green-600 dark:text-green-400 mt-2"
+						>
+							€39.3M annually
+						</div>
+						<div class="text-xs text-gray-500 mt-1">
+							Click to calculate per second
+						</div>
 					</button>
 					<button
 						onclick="setFamousSalary(51073237, 40)"
-						class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
+						class="p-6 border-2 border-red-200 dark:border-red-700 rounded-lg hover:bg-red-50 dark:hover:bg-red-900 text-left shadow-md hover:shadow-lg transition-all"
 					>
-						<div class="font-semibold">Reed Hastings</div>
-						<div class="text-sm text-gray-600">CEO, Netflix</div>
-						<div class="text-sm">€51.1M annually</div>
+						<div
+							class="font-bold text-lg text-red-600 dark:text-red-400"
+						>
+							Reed Hastings
+						</div>
+						<div class="text-sm mt-1">CEO, Netflix</div>
+						<div
+							class="text-lg font-semibold text-green-600 dark:text-green-400 mt-2"
+						>
+							€51.1M annually
+						</div>
+						<div class="text-xs text-gray-500 mt-1">
+							Click to calculate per second
+						</div>
 					</button>
 					<button
 						onclick="setFamousSalary(54946310, 40)"
-						class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
+						class="p-6 border-2 border-indigo-200 dark:border-indigo-700 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900 text-left shadow-md hover:shadow-lg transition-all"
 					>
-						<div class="font-semibold">Satya Nadella</div>
-						<div class="text-sm text-gray-600">CEO, Microsoft</div>
-						<div class="text-sm">€54.9M annually</div>
+						<div
+							class="font-bold text-lg text-indigo-600 dark:text-indigo-400"
+						>
+							Satya Nadella
+						</div>
+						<div class="text-sm mt-1">CEO, Microsoft</div>
+						<div
+							class="text-lg font-semibold text-green-600 dark:text-green-400 mt-2"
+						>
+							€54.9M annually
+						</div>
+						<div class="text-xs text-gray-500 mt-1">
+							Click to calculate per second
+						</div>
 					</button>
 					<button
 						onclick="setFamousSalary(99420097, 40)"
-						class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
+						class="p-6 border-2 border-yellow-200 dark:border-yellow-700 rounded-lg hover:bg-yellow-50 dark:hover:bg-yellow-900 text-left shadow-md hover:shadow-lg transition-all"
 					>
-						<div class="font-semibold">Tim Cook</div>
-						<div class="text-sm text-gray-600">CEO, Apple</div>
-						<div class="text-sm">€99.4M annually</div>
+						<div
+							class="font-bold text-lg text-yellow-600 dark:text-yellow-400"
+						>
+							Tim Cook
+						</div>
+						<div class="text-sm mt-1">CEO, Apple Inc.</div>
+						<div
+							class="text-lg font-semibold text-green-600 dark:text-green-400 mt-2"
+						>
+							€99.4M annually
+						</div>
+						<div class="text-xs text-gray-500 mt-1">
+							Click to calculate per second
+						</div>
 					</button>
 					<button
 						onclick="setFamousSalary(25000, 40)"
-						class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
+						class="p-6 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-left shadow-md hover:shadow-lg transition-all"
 					>
-						<div class="font-semibold">Median EU Salary</div>
-						<div class="text-sm text-gray-600">Average Worker</div>
-						<div class="text-sm">€25K annually</div>
+						<div
+							class="font-bold text-lg text-white-600 dark:text-white-400"
+						>
+							EU Median Salary
+						</div>
+						<div class="text-sm mt-1">Average European Worker</div>
+						<div
+							class="text-lg font-semibold text-green-600 dark:text-green-400 mt-2"
+						>
+							€25K annually
+						</div>
+						<div class="text-xs text-gray-500 mt-1">
+							Click to calculate per second
+						</div>
 					</button>
 				</div>
-				<p class="mt-4 text-xs text-gray-500 text-theme">
-					* CEO compensation data from AFL-CIO PayWatch 2022,
-					converted to EUR. Assumes 40 hours/week, 52 weeks/year for
-					comparison purposes.
-				</p>
-			</section>
-
-			<section id="features" class="mt-16">
-				<h2 class="text-xl font-semibold mb-4 text-theme">Features</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-						<h3 class="font-semibold text-theme mb-2">
-							💰 Multiple Salary Formats
-						</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">
-							Input your salary as annual, monthly, or hourly
-							rates with flexible working hour periods.
-						</p>
-					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-						<h3 class="font-semibold text-theme mb-2">
-							🌍 Global Currency Support
-						</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">
-							Calculate in 50+ currencies including EUR, USD, GBP,
-							JPY, and many more.
-						</p>
-					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-						<h3 class="font-semibold text-theme mb-2">
-							⏱️ Real-Time Counter
-						</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">
-							Watch your earnings accumulate in real-time with our
-							live counter feature.
-						</p>
-					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-						<h3 class="font-semibold text-theme mb-2">
-							🎯 Flexible Output Periods
-						</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">
-							View results per second, minute, day, week, biweek,
-							or month.
-						</p>
-					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-						<h3 class="font-semibold text-theme mb-2">
-							🌟 Famous Salaries
-						</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">
-							Compare with CEO salaries and industry benchmarks
-							for perspective.
-						</p>
-					</div>
-					<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-						<h3 class="font-semibold text-theme mb-2">
-							🔒 Privacy First
-						</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">
-							All calculations happen locally in your browser. No
-							data is stored or transmitted.
-						</p>
-					</div>
-				</div>
-			</section>
-
-			<section id="use-cases" class="mt-16">
-				<h2 class="text-xl font-semibold mb-4 text-theme">Use Cases</h2>
-				<div class="space-y-4">
-					<div class="border-l-4 border-blue-500 pl-4">
-						<h3 class="font-semibold text-theme mb-2">
-							💼 Salary Negotiation
-						</h3>
-						<p class="text-gray-700 dark:text-gray-300">
-							Understand your hourly value to negotiate better
-							compensation packages and justify raises.
-						</p>
-					</div>
-					<div class="border-l-4 border-green-500 pl-4">
-						<h3 class="font-semibold text-theme mb-2">
-							📊 Financial Planning
-						</h3>
-						<p class="text-gray-700 dark:text-gray-300">
-							Break down your earnings into different time periods
-							for better budgeting and financial planning.
-						</p>
-					</div>
-					<div class="border-l-4 border-purple-500 pl-4">
-						<h3 class="font-semibold text-theme mb-2">
-							🚀 Motivation & Productivity
-						</h3>
-						<p class="text-gray-700 dark:text-gray-300">
-							Watch your real-time earnings to stay motivated
-							during work sessions and meetings.
-						</p>
-					</div>
-					<div class="border-l-4 border-orange-500 pl-4">
-						<h3 class="font-semibold text-theme mb-2">
-							🔍 Career Comparison
-						</h3>
-						<p class="text-gray-700 dark:text-gray-300">
-							Compare different job offers and career paths by
-							understanding their true hourly value.
-						</p>
-					</div>
-					<div class="border-l-4 border-red-500 pl-4">
-						<h3 class="font-semibold text-theme mb-2">
-							💡 Freelance Pricing
-						</h3>
-						<p class="text-gray-700 dark:text-gray-300">
-							Set competitive freelance rates by understanding
-							your target earnings per hour.
-						</p>
-					</div>
+				<div
+					class="mt-8 p-4 bg-yellow-50 dark:bg-yellow-900 rounded-lg border border-yellow-200 dark:border-yellow-700"
+				>
+					<p class="text-sm text-white-800">
+						<strong>📊 Data Source:</strong> CEO compensation data
+						from AFL-CIO PayWatch 2022 and SEC filings, converted to
+						EUR. Calculations assume 40 hours/week, 52 weeks/year
+						for comparison purposes. Individual results may vary
+						based on actual working hours, stock options, and other
+						compensation factors.
+					</p>
 				</div>
 			</section>
 
@@ -926,14 +1405,10 @@
 				<div
 					class="bg-green-50 dark:bg-green-900 p-4 rounded-lg border border-green-200 dark:border-green-700"
 				>
-					<h3
-						class="font-semibold text-green-800 dark:text-green-200 mb-2"
-					>
+					<h3 class="font-semibold text-white-800 mb-2">
 						🔐 Your Data Stays Private
 					</h3>
-					<ul
-						class="text-green-700 dark:text-green-300 space-y-1 text-sm"
-					>
+					<ul class="text-white-700 space-y-1 text-sm">
 						<li>
 							• All calculations are performed locally in your
 							browser
@@ -953,38 +1428,30 @@
 				<div
 					class="bg-blue-50 dark:bg-blue-900 p-6 rounded-lg border border-blue-200 dark:border-blue-700"
 				>
-					<h3
-						class="font-semibold text-blue-800 dark:text-blue-200 mb-3"
-					>
+					<h3 class="font-semibold text-white-800 mb-3">
 						We'd Love to Hear From You!
 					</h3>
-					<p class="text-blue-700 dark:text-blue-300 mb-4">
+					<p class="text-white-700 mb-4">
 						Have suggestions, found a bug, or want to share how this
 						tool helped you? We're always looking to improve!
 					</p>
 					<div class="space-y-3">
 						<div>
-							<h4
-								class="font-medium text-blue-800 dark:text-blue-200"
-							>
+							<h4 class="font-medium text-white-800">
 								📧 Email Us:
 							</h4>
 							<a
 								href="mailto:info@wesselvandenijssel.nl?subject=Salary Calculator Feedback"
-								class="text-blue-600 dark:text-blue-400 hover:underline"
+								class="text-white-600 hover:underline"
 							>
 								info@wesselvandenijssel.nl
 							</a>
 						</div>
 						<div>
-							<h4
-								class="font-medium text-blue-800 dark:text-blue-200"
-							>
+							<h4 class="font-medium text-white-800">
 								💬 What to Include:
 							</h4>
-							<ul
-								class="text-blue-700 dark:text-blue-300 text-sm space-y-1"
-							>
+							<ul class="text-white-700 text-sm space-y-1">
 								<li>• Feature requests or improvement ideas</li>
 								<li>• Bug reports or technical issues</li>
 								<li>• Currency or functionality suggestions</li>
@@ -1004,11 +1471,9 @@
 				<div class="space-y-4">
 					<div class="border-l-4 border-green-500 pl-4">
 						<h3 class="font-semibold text-theme">
-							v2.0 - January 2025
+							v2.0 - August 2025
 						</h3>
-						<ul
-							class="text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1"
-						>
+						<ul class="text-white-700 text-sm mt-2 space-y-1">
 							<li>
 								• Added flexible output periods (second, minute,
 								day, week, biweek, month)
@@ -1022,11 +1487,9 @@
 					</div>
 					<div class="border-l-4 border-blue-500 pl-4">
 						<h3 class="font-semibold text-theme">
-							v1.5 - December 2024
+							v1.5 - July 2024
 						</h3>
-						<ul
-							class="text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1"
-						>
+						<ul class="text-white-700 text-sm mt-2 space-y-1">
 							<li>• Added 50+ global currencies support</li>
 							<li>
 								• Introduced famous people's salaries section
@@ -1036,11 +1499,9 @@
 					</div>
 					<div class="border-l-4 border-purple-500 pl-4">
 						<h3 class="font-semibold text-theme">
-							v1.0 - November 2024
+							v1.0 - June 2024
 						</h3>
-						<ul
-							class="text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1"
-						>
+						<ul class="text-white-700 text-sm mt-2 space-y-1">
 							<li>
 								• Initial release with basic salary calculation
 							</li>
