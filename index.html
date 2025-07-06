@@ -239,6 +239,45 @@
 						<div class="flex-1">
 							<label
 								class="block text-sm font-medium mb-1 text-theme"
+								>Salary Period</label
+							>
+							<select id="salary-period" class="w-full">
+								<option value="annual">Per Year</option>
+								<option value="monthly">Per Month</option>
+								<option value="hourly">Per Hour</option>
+							</select>
+						</div>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
+								>Working Hours</label
+							>
+							<input
+								id="hours"
+								type="number"
+								placeholder="Enter working hours"
+								class="w-full"
+								min="0"
+							/>
+						</div>
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
+								>Time Period</label
+							>
+							<select id="time-period" class="w-full">
+								<option value="weekly">Per Week</option>
+								<option value="daily">Per Day</option>
+								<option value="monthly">Per Month</option>
+							</select>
+						</div>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
+						<div class="flex-1">
+							<label
+								class="block text-sm font-medium mb-1 text-theme"
 								>Currency</label
 							>
 							<select id="currency" class="w-full">
@@ -310,47 +349,19 @@
 								<option value="LBP">LL Lebanese Pound</option>
 							</select>
 						</div>
-					</div>
-					<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
 						<div class="flex-1">
 							<label
 								class="block text-sm font-medium mb-1 text-theme"
-								>Salary Period</label
+								>Show Results As</label
 							>
-							<select id="salary-period" class="w-full">
-								<option value="annual">Per Year</option>
-								<option value="monthly">Per Month</option>
-								<option value="hourly">Per Hour</option>
-							</select>
-						</div>
-						<div class="flex-1">
-							<label
-								class="block text-sm font-medium mb-1 text-theme"
-								>Working Hours</label
-							>
-							<input
-								id="hours"
-								type="number"
-								placeholder="Enter working hours"
-								class="w-full"
-								min="0"
-							/>
-						</div>
-					</div>
-					<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
-						<div class="flex-1">
-							<label
-								class="block text-sm font-medium mb-1 text-theme"
-								>Time Period</label
-							>
-							<select id="time-period" class="w-full">
-								<option value="weekly">Per Week</option>
+							<select id="output-period" class="w-full">
+								<option value="second">Per Second</option>
+								<option value="minute">Per Minute</option>
 								<option value="daily">Per Day</option>
+								<option value="weekly">Per Week</option>
+								<option value="biweekly">Per Biweek</option>
 								<option value="monthly">Per Month</option>
 							</select>
-						</div>
-						<div class="flex-1">
-							<!-- Empty space for layout balance -->
 						</div>
 					</div>
 					<button
@@ -402,9 +413,10 @@
 					</li>
 				</ul>
 				<p class="text-gray-700 text-theme mt-4">
-					The calculation converts everything to annual income and
-					weekly hours, then divides by the total working seconds in a
-					year (hours × 52 weeks × 3600 seconds).
+					The calculation converts everything to annual income based
+					on your inputs, then divides by the appropriate time period
+					to show your earnings per second, minute, day, week, biweek,
+					or month - whatever you prefer to see.
 				</p>
 			</section>
 
@@ -670,6 +682,8 @@
 				const salaryPeriod =
 					document.getElementById("salary-period").value;
 				const timePeriod = document.getElementById("time-period").value;
+				const outputPeriod =
+					document.getElementById("output-period").value;
 				const currencySymbol = getCurrencySymbol();
 				const chatOutput = document.getElementById("chat-output");
 				const liveCounter = document.getElementById("live-counter");
@@ -710,9 +724,53 @@
 					weeklyHours = hours / 4.33; // Average weeks per month
 				}
 
-				const secondsPerYear = weeklyHours * 52 * 3600;
-				const perSecond = annualIncome / secondsPerYear;
-				const formatted = perSecond.toFixed(6);
+				// Calculate earnings based on output period
+				let earnings;
+				let periodText;
+				let liveCounterMultiplier;
+
+				switch (outputPeriod) {
+					case "second":
+						const secondsPerYear = weeklyHours * 52 * 3600;
+						earnings = annualIncome / secondsPerYear;
+						periodText = "second";
+						liveCounterMultiplier = 1;
+						break;
+					case "minute":
+						const minutesPerYear = weeklyHours * 52 * 60;
+						earnings = annualIncome / minutesPerYear;
+						periodText = "minute";
+						liveCounterMultiplier = 60;
+						break;
+					case "daily":
+						const daysPerYear = 365.25;
+						earnings = annualIncome / daysPerYear;
+						periodText = "day";
+						liveCounterMultiplier = 24 * 60 * 60;
+						break;
+					case "weekly":
+						earnings = annualIncome / 52;
+						periodText = "week";
+						liveCounterMultiplier = 7 * 24 * 60 * 60;
+						break;
+					case "biweekly":
+						earnings = annualIncome / 26;
+						periodText = "biweek";
+						liveCounterMultiplier = 14 * 24 * 60 * 60;
+						break;
+					case "monthly":
+						earnings = annualIncome / 12;
+						periodText = "month";
+						liveCounterMultiplier = 30.44 * 24 * 60 * 60; // Average month length
+						break;
+					default:
+						const defaultSecondsPerYear = weeklyHours * 52 * 3600;
+						earnings = annualIncome / defaultSecondsPerYear;
+						periodText = "second";
+						liveCounterMultiplier = 1;
+				}
+
+				const formatted = earnings.toFixed(6);
 
 				// Create descriptive text based on inputs
 				const salaryText =
@@ -733,9 +791,9 @@
 
 				currentInstance = new window.TypeIt("#chat-output", {
 					strings: [
-						`Calculating your salary per second...`,
+						`Calculating your salary per ${periodText}...`,
 						`Based on ${currencySymbol}${income.toLocaleString()} ${salaryText} and ${hours} hours ${timeText}...`,
-						`You earn ${currencySymbol}${formatted} per second.`,
+						`You earn ${currencySymbol}${formatted} per ${periodText}.`,
 					],
 					speed: 15,
 					lifeLike: true,
@@ -743,8 +801,12 @@
 					breakLines: true,
 					afterComplete: () => {
 						let totalEarned = 0;
+						let secondsElapsed = 0;
 						counterInterval = setInterval(() => {
-							totalEarned += perSecond;
+							secondsElapsed++;
+							totalEarned =
+								(secondsElapsed / liveCounterMultiplier) *
+								earnings;
 							liveCounter.textContent = `You've earned ${currencySymbol}${totalEarned.toFixed(
 								4
 							)} since clicking Calculate.`;
@@ -759,6 +821,7 @@
 				document.getElementById("currency").value = "EUR";
 				document.getElementById("salary-period").value = "annual";
 				document.getElementById("time-period").value = "weekly";
+				document.getElementById("output-period").value = "second";
 				calculate();
 				// Scroll to top smoothly
 				window.scrollTo({ top: 0, behavior: "smooth" });
