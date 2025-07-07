@@ -82,7 +82,7 @@ function calculate() {
 
 	if (!income || !hours || hours === 0) {
 		chatOutput.innerHTML =
-			'<span class="text-red-600">Please enter valid numbers.</span>';
+			`<span class="text-red-600">${window.translations.enter_valid_numbers}</span>`;
 		liveCounter.innerHTML = "";
 		clearInterval(counterInterval);
 		return;
@@ -125,40 +125,40 @@ function calculate() {
 		case "second":
 			const secondsPerYear = weeklyHours * 52 * 3600;
 			earnings = annualIncome / secondsPerYear;
-			periodText = "second";
+			periodText = window.translations.second;
 			liveCounterMultiplier = 1;
 			break;
 		case "minute":
 			const minutesPerYear = weeklyHours * 52 * 60;
 			earnings = annualIncome / minutesPerYear;
-			periodText = "minute";
+			periodText = window.translations.minute;
 			liveCounterMultiplier = 60;
 			break;
 		case "daily":
 			const daysPerYear = 365.25;
 			earnings = annualIncome / daysPerYear;
-			periodText = "day";
+			periodText = window.translations.day;
 			liveCounterMultiplier = 24 * 60 * 60;
 			break;
 		case "weekly":
 			earnings = annualIncome / 52;
-			periodText = "week";
+			periodText = window.translations.week;
 			liveCounterMultiplier = 7 * 24 * 60 * 60;
 			break;
 		case "biweekly":
 			earnings = annualIncome / 26;
-			periodText = "biweek";
+			periodText = window.translations.biweek;
 			liveCounterMultiplier = 14 * 24 * 60 * 60;
 			break;
 		case "monthly":
 			earnings = annualIncome / 12;
-			periodText = "month";
+			periodText = window.translations.month;
 			liveCounterMultiplier = 30.44 * 24 * 60 * 60; // Average month length
 			break;
 		default:
 			const defaultSecondsPerYear = weeklyHours * 52 * 3600;
 			earnings = annualIncome / defaultSecondsPerYear;
-			periodText = "second";
+			periodText = window.translations.second;
 			liveCounterMultiplier = 1;
 	}
 
@@ -167,25 +167,25 @@ function calculate() {
 	// Create descriptive text based on inputs
 	const salaryText =
 		salaryPeriod === "annual" ?
-		"annually" :
+		window.translations.annually :
 		salaryPeriod === "monthly" ?
-		"per month" :
-		"per hour";
+		window.translations.per_month :
+		window.translations.per_hour;
 	const timeText =
 		timePeriod === "weekly" ?
-		"per week" :
+		window.translations.per_week :
 		timePeriod === "daily" ?
-		"per day" :
-		"per month";
+		window.translations.per_day :
+		window.translations.per_month;
 
 	chatOutput.innerHTML = "";
 	liveCounter.innerHTML = "";
 
 	currentInstance = new window.TypeIt("#chat-output", {
 		strings: [
-			`Calculating your salary per ${periodText}...`,
-			`Based on ${currencySymbol}${income.toLocaleString()} ${salaryText} and ${hours} hours ${timeText}...`,
-			`You earn ${currencySymbol}${formatted} per ${periodText}.`,
+			`${window.translations.calculating} ${periodText}...`,
+			`${window.translations.based_on} ${currencySymbol}${income.toLocaleString()} ${salaryText} ${window.translations.and} ${hours} ${window.translations.hours} ${timeText}...`,
+			`${window.translations.you_earn} ${currencySymbol}${formatted} ${window.translations.per} ${periodText}.`,
 		],
 		speed: 15,
 		lifeLike: true,
@@ -199,9 +199,9 @@ function calculate() {
 				totalEarned =
 					(secondsElapsed / liveCounterMultiplier) *
 					earnings;
-				liveCounter.textContent = `You've earned ${currencySymbol}${totalEarned.toFixed(
+				liveCounter.textContent = `${window.translations.youve_earned} ${currencySymbol}${totalEarned.toFixed(
 							4
-						)} since clicking Calculate.`;
+						)} ${window.translations.since_clicking}`;
 			}, 1000);
 		},
 	}).go();
@@ -225,7 +225,7 @@ function setFamousSalary(income, hours) {
 window.addEventListener("DOMContentLoaded", () => {
 	currentInstance = new window.TypeIt("#chat-output", {
 		strings: [
-			"Hi there! Let's calculate your salary per second.",
+			window.translations.welcome_message,
 		],
 		speed: 15,
 		lifeLike: true,

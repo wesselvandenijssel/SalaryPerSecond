@@ -131,6 +131,32 @@
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 	<script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
 	<link rel="stylesheet" href="style.css" />
+	<script>
+		// Pass translations to JavaScript
+		window.translations = {
+			welcome_message: "<?php echo addslashes(t('js_welcome_message')); ?>",
+			calculating: "<?php echo addslashes(t('js_calculating')); ?>",
+			based_on: "<?php echo addslashes(t('js_based_on')); ?>",
+			and: "<?php echo addslashes(t('js_and')); ?>",
+			hours: "<?php echo addslashes(t('js_hours')); ?>",
+			you_earn: "<?php echo addslashes(t('js_you_earn')); ?>",
+			per: "<?php echo addslashes(t('js_per')); ?>",
+			youve_earned: "<?php echo addslashes(t('js_youve_earned')); ?>",
+			since_clicking: "<?php echo addslashes(t('js_since_clicking')); ?>",
+			enter_valid_numbers: "<?php echo addslashes(t('js_enter_valid_numbers')); ?>",
+			annually: "<?php echo addslashes(t('js_annually')); ?>",
+			per_month: "<?php echo addslashes(t('js_per_month')); ?>",
+			per_hour: "<?php echo addslashes(t('js_per_hour')); ?>",
+			per_week: "<?php echo addslashes(t('js_per_week')); ?>",
+			per_day: "<?php echo addslashes(t('js_per_day')); ?>",
+			second: "<?php echo addslashes(t('js_second')); ?>",
+			minute: "<?php echo addslashes(t('js_minute')); ?>",
+			day: "<?php echo addslashes(t('js_day')); ?>",
+			week: "<?php echo addslashes(t('js_week')); ?>",
+			biweek: "<?php echo addslashes(t('js_biweek')); ?>",
+			month: "<?php echo addslashes(t('js_month')); ?>"
+		};
+	</script>
 </head>
 
 <body class="light">
