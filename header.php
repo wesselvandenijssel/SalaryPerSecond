@@ -128,6 +128,15 @@
 		}
 	</script>
 
+	<!-- Favicon and Web App Manifest -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+	<link rel="manifest" href="site.webmanifest" />
+	<meta name="theme-color" content="#059669" />
+	<meta name="msapplication-TileColor" content="#059669" />
+
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 	<script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
 	<link rel="stylesheet" href="style.css" />

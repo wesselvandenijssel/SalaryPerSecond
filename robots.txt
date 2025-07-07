@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://salaryperSecond.com/sitemap.xml
+
+# Disallow access to certain directories for privacy
+Disallow: /lang/
+Disallow: /sections/
