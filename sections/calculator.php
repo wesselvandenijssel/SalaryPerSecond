@@ -6,35 +6,35 @@
 	<div class="input-area">
 		<div class="flex flex-col sm:flex-row gap-4 w-full">
 			<div class="flex-1">
-				<label class="block text-sm font-medium mb-1 text-theme">Salary Amount</label>
-				<input id="income" type="number" placeholder="Enter salary amount" class="w-full" min="0" />
+				<label class="block text-sm font-medium mb-1 text-theme"><?php echo t('label_salary_amount'); ?></label>
+				<input id="income" type="number" placeholder="<?php echo t('placeholder_salary_amount'); ?>" class="w-full" min="0" />
 			</div>
 			<div class="flex-1">
-				<label class="block text-sm font-medium mb-1 text-theme">Salary Period</label>
+				<label class="block text-sm font-medium mb-1 text-theme"><?php echo t('label_salary_period'); ?></label>
 				<select id="salary-period" class="w-full">
-					<option value="annual">Per Year</option>
-					<option value="monthly">Per Month</option>
-					<option value="hourly">Per Hour</option>
+					<option value="annual"><?php echo t('period_annual'); ?></option>
+					<option value="monthly"><?php echo t('period_monthly'); ?></option>
+					<option value="hourly"><?php echo t('period_hourly'); ?></option>
 				</select>
 			</div>
 		</div>
 		<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
 			<div class="flex-1">
-				<label class="block text-sm font-medium mb-1 text-theme">Working Hours</label>
-				<input id="hours" type="number" placeholder="Enter working hours" class="w-full" min="0" />
+				<label class="block text-sm font-medium mb-1 text-theme"><?php echo t('label_working_hours'); ?></label>
+				<input id="hours" type="number" placeholder="<?php echo t('placeholder_working_hours'); ?>" class="w-full" min="0" />
 			</div>
 			<div class="flex-1">
-				<label class="block text-sm font-medium mb-1 text-theme">Time Period</label>
+				<label class="block text-sm font-medium mb-1 text-theme"><?php echo t('label_time_period'); ?></label>
 				<select id="time-period" class="w-full">
-					<option value="weekly">Per Week</option>
-					<option value="daily">Per Day</option>
-					<option value="monthly">Per Month</option>
+					<option value="weekly"><?php echo t('time_weekly'); ?></option>
+					<option value="daily"><?php echo t('time_daily'); ?></option>
+					<option value="monthly"><?php echo t('time_monthly'); ?></option>
 				</select>
 			</div>
 		</div>
 		<div class="flex flex-col sm:flex-row gap-4 w-full mt-4">
 			<div class="flex-1">
-				<label class="block text-sm font-medium mb-1 text-theme">Currency</label>
+				<label class="block text-sm font-medium mb-1 text-theme"><?php echo t('label_currency'); ?></label>
 				<select id="currency" class="w-full">
 					<option value="EUR">€ Euro</option>
 					<option value="USD">$ US Dollar</option>
@@ -105,25 +105,23 @@
 				</select>
 			</div>
 			<div class="flex-1">
-				<label class="block text-sm font-medium mb-1 text-theme">Show Results As</label>
+				<label class="block text-sm font-medium mb-1 text-theme"><?php echo t('label_show_results'); ?></label>
 				<select id="output-period" class="w-full">
-					<option value="second">Per Second</option>
-					<option value="minute">Per Minute</option>
-					<option value="daily">Per Day</option>
-					<option value="weekly">Per Week</option>
-					<option value="biweekly">Per Biweek</option>
-					<option value="monthly">Per Month</option>
+					<option value="second"><?php echo t('output_second'); ?></option>
+					<option value="minute"><?php echo t('output_minute'); ?></option>
+					<option value="daily"><?php echo t('output_daily'); ?></option>
+					<option value="weekly"><?php echo t('output_weekly'); ?></option>
+					<option value="biweekly"><?php echo t('output_biweekly'); ?></option>
+					<option value="monthly"><?php echo t('output_monthly'); ?></option>
 				</select>
 			</div>
 		</div>
 		<button onclick="calculate()"
 			class="w-full sm:w-auto mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
-			Calculate
+			<?php echo t('btn_calculate'); ?>
 		</button>
 	</div>
 	<p class="mt-4 text-sm text-gray-600 text-center text-theme">
-		Calculate your earnings in any time period you prefer - from
-		seconds to months. Choose your salary format, working hours,
-		currency, and output period for personalized results.
+		<?php echo t('calculator_description'); ?>
 	</p>
 </section>

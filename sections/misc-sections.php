@@ -1,56 +1,54 @@
 <section id="privacy" class="mt-16">
 	<h2 class="text-xl font-semibold mb-4 text-theme">
-		Privacy & Security
+		<?php echo t('privacy_title'); ?>
 	</h2>
 	<div class="bg-green-50 dark:bg-green-900 p-4 rounded-lg border border-green-200 dark:border-green-700">
 		<h3 class="font-semibold text-white-800 mb-2">
-			🔐 Your Data Stays Private
+			<?php echo t('privacy_subtitle'); ?>
 		</h3>
 		<ul class="text-white-700 space-y-1 text-sm">
 			<li>
-				• All calculations are performed locally in your
-				browser
+				<?php echo t('privacy_point_1'); ?>
 			</li>
-			<li>• No salary data is ever sent to our servers</li>
-			<li>• No tracking or analytics cookies are used</li>
-			<li>• No user accounts or registration required</li>
-			<li>• Open-source and transparent calculations</li>
+			<li><?php echo t('privacy_point_2'); ?></li>
+			<li><?php echo t('privacy_point_3'); ?></li>
+			<li><?php echo t('privacy_point_4'); ?></li>
+			<li><?php echo t('privacy_point_5'); ?></li>
 		</ul>
 	</div>
 </section>
 
 <section id="feedback" class="mt-16">
 	<h2 class="text-xl font-semibold mb-4 text-theme">
-		Feedback & Support
+		<?php echo t('feedback_title'); ?>
 	</h2>
 	<div class="bg-blue-50 dark:bg-blue-900 p-6 rounded-lg border border-blue-200 dark:border-blue-700">
 		<h3 class="font-semibold text-white-800 mb-3">
-			We'd Love to Hear From You!
+			<?php echo t('feedback_subtitle'); ?>
 		</h3>
 		<p class="text-white-700 mb-4">
-			Have suggestions, found a bug, or want to share how this
-			tool helped you? We're always looking to improve!
+			<?php echo t('feedback_description'); ?>
 		</p>
 		<div class="space-y-3">
 			<div>
 				<h4 class="font-medium text-white-800">
-					📧 Email Us:
+					<?php echo t('feedback_email_label'); ?>
 				</h4>
 				<a href="mailto:info@wesselvandenijssel.nl?subject=Salary Calculator Feedback"
 					class="text-white-600 hover:underline">
-					info@wesselvandenijssel.nl
+					<?php echo t('feedback_email'); ?>
 				</a>
 			</div>
 			<div>
 				<h4 class="font-medium text-white-800">
-					💬 What to Include:
+					<?php echo t('feedback_include_label'); ?>
 				</h4>
 				<ul class="text-white-700 text-sm space-y-1">
-					<li>• Feature requests or improvement ideas</li>
-					<li>• Bug reports or technical issues</li>
-					<li>• Currency or functionality suggestions</li>
+					<li><?php echo t('feedback_include_1'); ?></li>
+					<li><?php echo t('feedback_include_2'); ?></li>
+					<li><?php echo t('feedback_include_3'); ?></li>
 					<li>
-						• General feedback about your experience
+						<?php echo t('feedback_include_4'); ?>
 					</li>
 				</ul>
 			</div>
@@ -60,47 +58,45 @@
 
 <section id="changelog" class="mt-16">
 	<h2 class="text-xl font-semibold mb-4 text-theme">
-		Recent Updates
+		<?php echo t('changelog_title'); ?>
 	</h2>
 	<div class="space-y-4">
 		<div class="border-l-4 border-green-500 pl-4">
 			<h3 class="font-semibold text-theme">
-				v2.0 - August 2025
+				<?php echo t('changelog_v2_title'); ?>
 			</h3>
 			<ul class="text-white-700 text-sm mt-2 space-y-1">
 				<li>
-					• Added flexible output periods (second, minute,
-					day, week, biweek, month)
+					<?php echo t('changelog_v2_1'); ?>
 				</li>
 				<li>
-					• Improved live counter accuracy for all time
-					periods
+					<?php echo t('changelog_v2_2'); ?>
 				</li>
-				<li>• Enhanced mobile responsiveness</li>
+				<li><?php echo t('changelog_v2_3'); ?></li>
 			</ul>
 		</div>
 		<div class="border-l-4 border-blue-500 pl-4">
 			<h3 class="font-semibold text-theme">
-				v1.5 - July 2024
+				<?php echo t('changelog_v1_5_title'); ?>
 			</h3>
 			<ul class="text-white-700 text-sm mt-2 space-y-1">
-				<li>• Added 50+ global currencies support</li>
+				<li><?php echo t('changelog_v1_5_1'); ?></li>
 				<li>
-					• Introduced famous people's salaries section
+					<?php echo t('changelog_v1_5_2'); ?>
 				</li>
-				<li>• Enhanced dark mode support</li>
+				<li><?php echo t('changelog_v1_5_3'); ?></li>
 			</ul>
 		</div>
 		<div class="border-l-4 border-purple-500 pl-4">
 			<h3 class="font-semibold text-theme">
-				v1.0 - June 2024
+				<?php echo t('changelog_v1_title'); ?>
 			</h3>
 			<ul class="text-white-700 text-sm mt-2 space-y-1">
 				<li>
-					• Initial release with basic salary calculation
+					<?php echo t('changelog_v1_1'); ?>
 				</li>
-				<li>• Real-time earnings counter</li>
-				<li>• Multiple salary input formats</li>
+				<li><?php echo t('changelog_v1_2'); ?></li>
+				<li><?php echo t('changelog_v1_3'); ?></li>
 			</ul>
 		</div>
 	</div>
@@ -108,10 +104,10 @@
 
 <section id="call-to-action" class="mt-16 text-center">
 	<h2 class="text-xl font-semibold mb-4 text-theme">
-		Ready to See Your Earnings Live?
+		<?php echo t('cta_title'); ?>
 	</h2>
 	<button onclick="document.getElementById('income').focus()"
 		class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
-		Start Calculating Now
+		<?php echo t('cta_button'); ?>
 	</button>
 </section>

@@ -1,98 +1,73 @@
 <section id="faq" class="mt-16">
 	<h2 class="text-3xl font-bold mb-6 text-theme text-center">
-		❓ Frequently Asked Questions
+		<?php echo t('faq_title'); ?>
 	</h2>
 	<p class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-3xl mx-auto text-theme">
-		Get answers to the most common questions about our salary
-		calculator and how to use it effectively.
+		<?php echo t('faq_description'); ?>
 	</p>
 	<div class="space-y-6 max-w-4xl mx-auto">
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				Is my salary data saved or shared with anyone?
+				<?php echo t('faq_1_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				No. All calculations happen locally in your browser,
-				ensuring complete privacy. No data is ever sent to
-				our servers, stored, or shared with third parties.
+				<?php echo t('faq_1_answer'); ?>
 			</p>
 		</div>
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				How accurate are the salary calculations?
+				<?php echo t('faq_2_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				The calculations are mathematically precise based on
-				your inputs. We convert everything to annual figures
-				and divide by the appropriate time periods for
-				accurate results across all supported currencies.
+				<?php echo t('faq_2_answer'); ?>
 			</p>
 		</div>
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				Why does the real-time counter update every second?
+				<?php echo t('faq_3_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				To give you a dynamic and real-time visualization of
-				your earnings as time passes, regardless of your
-				chosen output period. This helps with motivation and
-				productivity tracking.
+				<?php echo t('faq_3_answer'); ?>
 			</p>
 		</div>
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				Can I use this calculator for freelance or contract
-				work?
+				<?php echo t('faq_4_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				Absolutely! This tool is perfect for freelancers to
-				understand their hourly value and set competitive
-				rates. Use the hourly input format for the most
-				accurate freelance calculations.
+				<?php echo t('faq_4_answer'); ?>
 			</p>
 		</div>
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				Are taxes and benefits included in the calculations?
+				<?php echo t('faq_5_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				No, all calculations are based on gross income. You
-				should factor in taxes, benefits, and other
-				deductions separately for net income calculations.
+				<?php echo t('faq_5_answer'); ?>
 			</p>
 		</div>
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				What currencies are supported by the calculator?
+				<?php echo t('faq_6_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				We support 50+ major global currencies including
-				EUR, USD, GBP, JPY, and many regional currencies
-				from Europe, Asia, Americas, Africa, and Oceania.
+				<?php echo t('faq_6_answer'); ?>
 			</p>
 		</div>
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				How do I calculate my salary if I work irregular
-				hours?
+				<?php echo t('faq_7_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				For irregular hours, calculate your average weekly
-				hours over a month or quarter and use that as your
-				input. This will give you a more accurate
-				representation of your earnings.
+				<?php echo t('faq_7_answer'); ?>
 			</p>
 		</div>
 		<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
 			<h3 class="font-semibold text-gray-600 mb-3 text-lg">
-				How can I report a bug or request a new feature?
+				<?php echo t('faq_8_question'); ?>
 			</h3>
 			<p class="text-gray-700 dark:text-gray-300">
-				Please email me at
-				<a href="mailto:info@wesselvandenijssel.nl?subject=Salary Calculator Feedback"
-					class="text-blue-600 dark:text-blue-400 hover:underline">info@wesselvandenijssel.nl</a>
-				with your feedback, suggestions, or bug reports. We
-				appreciate all user input!
+				<?php echo t('faq_8_answer'); ?>
 			</p>
 		</div>
 	</div>

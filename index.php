@@ -1,3 +1,4 @@
+<?php include 'lang.php'; ?>
 <?php include 'header.php'; ?>
 
 <main class="chat-box">

@@ -1,33 +1,26 @@
 <section id="about" class="mt-16">
-	<h2 class="text-xl font-semibold mb-4 text-theme">About</h2>
+	<h2 class="text-xl font-semibold mb-4 text-theme"><?php echo t('about_title'); ?></h2>
 	<p class="text-gray-700 text-theme">
-		This project is a minimal and interactive tool inspired by
-		ChatGPT's typing style. It's designed to help you visualize
-		how much you're earning in real-time. No data is stored or
-		transmitted. All calculations are done in your browser.
+		<?php echo t('about_description'); ?>
 	</p>
 </section>
 
 <section id="tips" class="mt-16">
 	<h2 class="text-xl font-semibold mb-4 text-theme">
-		Salary Tips
+		<?php echo t('tips_title'); ?>
 	</h2>
 	<ul class="list-disc list-inside text-gray-700 text-theme space-y-2">
 		<li>
-			Consider how overtime or bonuses affect your hourly
-			earnings.
+			<?php echo t('tip_1'); ?>
 		</li>
 		<li>
-			Use this tool to negotiate fair compensation based on
-			your working hours.
+			<?php echo t('tip_2'); ?>
 		</li>
 		<li>
-			Track your real-time earnings during projects or
-			freelance work.
+			<?php echo t('tip_3'); ?>
 		</li>
 		<li>
-			Remember to factor in taxes and benefits when evaluating
-			salary.
+			<?php echo t('tip_4'); ?>
 		</li>
 	</ul>
 </section>
