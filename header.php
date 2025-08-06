@@ -163,7 +163,9 @@
 			day: "<?php echo addslashes(t('js_day')); ?>",
 			week: "<?php echo addslashes(t('js_week')); ?>",
 			biweek: "<?php echo addslashes(t('js_biweek')); ?>",
-			month: "<?php echo addslashes(t('js_month')); ?>"
+			month: "<?php echo addslashes(t('js_month')); ?>",
+			hourly: "<?php echo addslashes(t('js_hourly')); ?>",
+			annual: "<?php echo addslashes(t('js_annual')); ?>"
 		};
 	</script>
 </head>

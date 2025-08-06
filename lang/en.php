@@ -14,7 +14,7 @@ return [
     'nav_changelog' => 'Updates',
     'nav_faq' => 'FAQ',
     'toggle_theme' => 'Toggle Theme',
-    
+
     // Calculator Section
     'calculator_title' => 'Salary Calculator Per Second',
     'calculator_description' => 'Calculate your earnings in any time period you prefer - from seconds to months. Choose your salary format, working hours, currency, and output period for personalized results.',
@@ -34,12 +34,14 @@ return [
     'label_show_results' => 'Show Results As',
     'output_second' => 'Per Second',
     'output_minute' => 'Per Minute',
+    'output_hourly' => 'Per Hour',
+    'output_annual' => 'Per Year',
     'output_daily' => 'Per Day',
     'output_weekly' => 'Per Week',
     'output_biweekly' => 'Per Biweek',
     'output_monthly' => 'Per Month',
     'btn_calculate' => 'Calculate',
-    
+
     // Features Section
     'features_title' => '🚀 Powerful Salary Calculator Features',
     'features_description' => 'Our advanced salary calculator offers comprehensive tools for accurate earnings analysis across multiple time periods and currencies.',
@@ -55,7 +57,7 @@ return [
     'feature_5_desc' => 'Compare with CEO salaries and industry benchmarks for perspective on earnings and career goal setting with real market data.',
     'feature_6_title' => '🔒 Privacy-First Design',
     'feature_6_desc' => 'All calculations happen locally in your browser. No data is stored, transmitted, or tracked anywhere for complete privacy protection.',
-    
+
     // Use Cases Section
     'use_cases_title' => '💼 Professional Use Cases & Applications',
     'use_cases_description' => 'Discover how professionals, freelancers, and job seekers use our salary calculator for career advancement and financial planning.',
@@ -69,7 +71,7 @@ return [
     'use_case_4_desc' => 'Compare different job offers and career paths by understanding their true hourly value and total compensation packages.',
     'use_case_5_title' => '💡 Freelance & Contract Rate Setting',
     'use_case_5_desc' => 'Set competitive freelance rates and project pricing by understanding your target earnings per hour and time investment requirements.',
-    
+
     // How It Works Section
     'how_it_works_title' => 'How It Works',
     'how_it_works_intro' => 'This tool estimates your salary per second by calculating your total annual income divided by the number of seconds you work in a year. You can input your salary in different formats:',
@@ -82,7 +84,7 @@ return [
     'how_it_works_daily' => 'Daily: Hours worked per day (assumes 5 working days)',
     'how_it_works_monthly_hours' => 'Monthly: Hours worked per month (converted to weekly)',
     'how_it_works_calculation' => 'The calculation converts everything to annual income based on your inputs, then divides by the appropriate time period to show your earnings per second, minute, day, week, biweek, or month - whatever you prefer to see.',
-    
+
     // About & Tips Section
     'about_title' => 'About',
     'about_description' => 'This project is a minimal and interactive tool inspired by ChatGPT\'s typing style. It\'s designed to help you visualize how much you\'re earning in real-time. No data is stored or transmitted. All calculations are done in your browser.',
@@ -91,7 +93,7 @@ return [
     'tip_2' => 'Use this tool to negotiate fair compensation based on your working hours.',
     'tip_3' => 'Track your real-time earnings during projects or freelance work.',
     'tip_4' => 'Remember to factor in taxes and benefits when evaluating salary.',
-    
+
     // FAQ Section
     'faq_title' => '❓ Frequently Asked Questions',
     'faq_description' => 'Get answers to the most common questions about our salary calculator and how to use it effectively.',
@@ -111,13 +113,13 @@ return [
     'faq_7_answer' => 'For irregular hours, calculate your average weekly hours over a month or quarter and use that as your input. This will give you a more accurate representation of your earnings.',
     'faq_8_question' => 'How can I report a bug or request a new feature?',
     'faq_8_answer' => 'Please email me at info@wesselvandenijssel.nl with your feedback, suggestions, or bug reports. We appreciate all user input!',
-    
+
     // Famous Salaries Section
     'famous_salaries_title' => '🌟 CEO & Celebrity Salary Benchmarks',
     'famous_salaries_description' => 'Compare your earnings with top executives and industry leaders. Click any salary to see their real-time earnings breakdown.',
     'famous_salary_click' => 'Click to calculate per second',
     'famous_salary_data_source' => '📊 Data Source: CEO compensation data from AFL-CIO PayWatch 2022 and SEC filings, converted to EUR. Calculations assume 40 hours/week, 52 weeks/year for comparison purposes. Individual results may vary based on actual working hours, stock options, and other compensation factors.',
-    
+
     // Misc Sections
     'privacy_title' => 'Privacy & Security',
     'privacy_subtitle' => '🔐 Your Data Stays Private',
@@ -126,7 +128,7 @@ return [
     'privacy_point_3' => '• No tracking or analytics cookies are used',
     'privacy_point_4' => '• No user accounts or registration required',
     'privacy_point_5' => '• Open-source and transparent calculations',
-    
+
     'feedback_title' => 'Feedback & Support',
     'feedback_subtitle' => 'We\'d Love to Hear From You!',
     'feedback_description' => 'Have suggestions, found a bug, or want to share how this tool helped you? We\'re always looking to improve!',
@@ -137,7 +139,7 @@ return [
     'feedback_include_2' => '• Bug reports or technical issues',
     'feedback_include_3' => '• Currency or functionality suggestions',
     'feedback_include_4' => '• General feedback about your experience',
-    
+
     'changelog_title' => 'Recent Updates',
     'changelog_v2_title' => 'v2.0 - August 2025',
     'changelog_v2_1' => '• Added flexible output periods (second, minute, day, week, biweek, month)',
@@ -151,16 +153,16 @@ return [
     'changelog_v1_1' => '• Initial release with basic salary calculation',
     'changelog_v1_2' => '• Real-time earnings counter',
     'changelog_v1_3' => '• Multiple salary input formats',
-    
+
     'cta_title' => 'Ready to See Your Earnings Live?',
     'cta_button' => 'Start Calculating Now',
-    
+
     // Footer
     'footer_created_by' => 'Created by Wessel van den IJssel',
     'footer_email' => 'Email',
     'footer_linkedin' => 'LinkedIn',
     'footer_github' => 'GitHub',
-    
+
     // Famous People Names (keeping original for consistency)
     'mark_zuckerberg' => 'Mark Zuckerberg',
     'mark_zuckerberg_title' => 'CEO, Meta (Facebook)',
@@ -175,7 +177,7 @@ return [
     'eu_median' => 'EU Median Salary',
     'eu_median_title' => 'Average European Worker',
     'annually' => 'annually',
-    
+
     // JavaScript Translations
     'js_welcome_message' => 'Hi there! Let\'s calculate your salary per second.',
     'js_calculating' => 'Calculating your salary per',
@@ -198,4 +200,6 @@ return [
     'js_week' => 'week',
     'js_biweek' => 'biweek',
     'js_month' => 'month',
+    'js_hourly' => 'hour',
+    'js_annual' => 'year',
 ];

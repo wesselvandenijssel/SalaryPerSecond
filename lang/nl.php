@@ -14,7 +14,7 @@ return [
     'nav_changelog' => 'Updates',
     'nav_faq' => 'Veelgestelde Vragen',
     'toggle_theme' => 'Thema Wisselen',
-    
+
     // Calculator Section
     'calculator_title' => 'Salaris Calculator Per Seconde',
     'calculator_description' => 'Bereken je verdiensten in elke gewenste tijdsperiode - van seconden tot maanden. Kies je salarisformaat, werkuren, valuta en uitvoerperiode voor gepersonaliseerde resultaten.',
@@ -34,12 +34,14 @@ return [
     'label_show_results' => 'Toon Resultaten Als',
     'output_second' => 'Per Seconde',
     'output_minute' => 'Per Minuut',
+    'output_hourly' => 'Per Uur',
+    'output_annual' => 'Per Jaar',
     'output_daily' => 'Per Dag',
     'output_weekly' => 'Per Week',
     'output_biweekly' => 'Per Twee Weken',
     'output_monthly' => 'Per Maand',
     'btn_calculate' => 'Bereken',
-    
+
     // Features Section
     'features_title' => '🚀 Krachtige Salaris Calculator Functies',
     'features_description' => 'Onze geavanceerde salaris calculator biedt uitgebreide tools voor nauwkeurige inkomsten analyse over meerdere tijdsperiodes en valuta\'s.',
@@ -55,7 +57,7 @@ return [
     'feature_5_desc' => 'Vergelijk met CEO salarissen en industrie benchmarks voor perspectief op verdiensten en carrière doelen met echte marktdata.',
     'feature_6_title' => '🔒 Privacy-First Ontwerp',
     'feature_6_desc' => 'Alle berekeningen gebeuren lokaal in je browser. Geen data wordt opgeslagen, verzonden, of bijgehouden voor complete privacy bescherming.',
-    
+
     // Use Cases Section
     'use_cases_title' => '💼 Professionele Toepassingen & Gebruiksmogelijkheden',
     'use_cases_description' => 'Ontdek hoe professionals, freelancers, en werkzoekenden onze salaris calculator gebruiken voor carrière ontwikkeling en financiële planning.',
@@ -69,7 +71,7 @@ return [
     'use_case_4_desc' => 'Vergelijk verschillende vacatures en carrière paden door hun echte uurwaarde en totale compensatiepakketten te begrijpen.',
     'use_case_5_title' => '💡 Freelance & Contract Tarief Bepaling',
     'use_case_5_desc' => 'Stel competitieve freelance tarieven en project prijzen in door je doel verdiensten per uur en tijd investering vereisten te begrijpen.',
-    
+
     // How It Works Section
     'how_it_works_title' => 'Hoe Het Werkt',
     'how_it_works_intro' => 'Deze tool schat je salaris per seconde door je totale jaarinkomen te berekenen gedeeld door het aantal seconden dat je werkt in een jaar. Je kunt je salaris invoeren in verschillende formaten:',
@@ -82,7 +84,7 @@ return [
     'how_it_works_daily' => 'Dagelijks: Uren gewerkt per dag (gaat uit van 5 werkdagen)',
     'how_it_works_monthly_hours' => 'Maandelijks: Uren gewerkt per maand (omgerekend naar wekelijks)',
     'how_it_works_calculation' => 'De berekening converteert alles naar jaarinkomen gebaseerd op je invoer, dan deelt door de juiste tijdsperiode om je verdiensten per seconde, minuut, dag, week, twee weken, of maand te tonen - wat je maar wilt zien.',
-    
+
     // About & Tips Section
     'about_title' => 'Over',
     'about_description' => 'Dit project is een minimale en interactieve tool geïnspireerd door ChatGPT\'s typestijl. Het is ontworpen om je te helpen visualiseren hoeveel je real-time verdient. Geen data wordt opgeslagen of verzonden. Alle berekeningen worden gedaan in je browser.',
@@ -91,7 +93,7 @@ return [
     'tip_2' => 'Gebruik deze tool om eerlijke compensatie te onderhandelen gebaseerd op je werkuren.',
     'tip_3' => 'Volg je real-time verdiensten tijdens projecten of freelance werk.',
     'tip_4' => 'Vergeet niet belastingen en voordelen mee te rekenen bij het evalueren van salaris.',
-    
+
     // FAQ Section
     'faq_title' => '❓ Veelgestelde Vragen',
     'faq_description' => 'Krijg antwoorden op de meest voorkomende vragen over onze salaris calculator en hoe deze effectief te gebruiken.',
@@ -111,13 +113,13 @@ return [
     'faq_7_answer' => 'Voor onregelmatige uren, bereken je gemiddelde wekelijkse uren over een maand of kwartaal en gebruik dat als je invoer. Dit geeft je een nauwkeurigere representatie van je verdiensten.',
     'faq_8_question' => 'Hoe kan ik een bug rapporteren of een nieuwe functie aanvragen?',
     'faq_8_answer' => 'Mail me alsjeblieft op info@wesselvandenijssel.nl met je feedback, suggesties, of bug rapporten. We waarderen alle gebruiker input!',
-    
+
     // Famous Salaries Section
     'famous_salaries_title' => '🌟 CEO & Beroemdheid Salaris Benchmarks',
     'famous_salaries_description' => 'Vergelijk je verdiensten met top executives en industrie leiders. Klik op elk salaris om hun real-time verdiensten verdeling te zien.',
     'famous_salary_click' => 'Klik om per seconde te berekenen',
     'famous_salary_data_source' => '📊 Data Bron: CEO compensatie data van AFL-CIO PayWatch 2022 en SEC filings, omgerekend naar EUR. Berekeningen gaan uit van 40 uur/week, 52 weken/jaar voor vergelijkingsdoeleinden. Individuele resultaten kunnen variëren gebaseerd op werkelijke werkuren, aandelenopties, en andere compensatie factoren.',
-    
+
     // Misc Sections
     'privacy_title' => 'Privacy & Beveiliging',
     'privacy_subtitle' => '🔐 Je Data Blijft Privé',
@@ -126,7 +128,7 @@ return [
     'privacy_point_3' => '• Geen tracking of analytics cookies worden gebruikt',
     'privacy_point_4' => '• Geen gebruikersaccounts of registratie vereist',
     'privacy_point_5' => '• Open-source en transparante berekeningen',
-    
+
     'feedback_title' => 'Feedback & Ondersteuning',
     'feedback_subtitle' => 'We Horen Graag Van Je!',
     'feedback_description' => 'Heb je suggesties, een bug gevonden, of wil je delen hoe deze tool je heeft geholpen? We zijn altijd op zoek naar verbetering!',
@@ -137,7 +139,7 @@ return [
     'feedback_include_2' => '• Bug rapporten of technische problemen',
     'feedback_include_3' => '• Valuta of functionaliteit suggesties',
     'feedback_include_4' => '• Algemene feedback over je ervaring',
-    
+
     'changelog_title' => 'Recente Updates',
     'changelog_v2_title' => 'v2.0 - Augustus 2025',
     'changelog_v2_1' => '• Flexibele uitvoerperiodes toegevoegd (seconde, minuut, dag, week, twee weken, maand)',
@@ -151,16 +153,16 @@ return [
     'changelog_v1_1' => '• Eerste release met basis salaris berekening',
     'changelog_v1_2' => '• Real-time verdiensten teller',
     'changelog_v1_3' => '• Meerdere salaris invoer formaten',
-    
+
     'cta_title' => 'Klaar Om Je Verdiensten Live Te Zien?',
     'cta_button' => 'Begin Nu Met Berekenen',
-    
+
     // Footer
     'footer_created_by' => 'Gemaakt door Wessel van den IJssel',
     'footer_email' => 'Email',
     'footer_linkedin' => 'LinkedIn',
     'footer_github' => 'GitHub',
-    
+
     // Famous People Names (keeping original for consistency)
     'mark_zuckerberg' => 'Mark Zuckerberg',
     'mark_zuckerberg_title' => 'CEO, Meta (Facebook)',
@@ -175,7 +177,7 @@ return [
     'eu_median' => 'EU Mediaan Salaris',
     'eu_median_title' => 'Gemiddelde Europese Werker',
     'annually' => 'per jaar',
-    
+
     // JavaScript Translations
     'js_welcome_message' => 'Hallo daar! Laten we je salaris per seconde berekenen.',
     'js_calculating' => 'Je salaris per',
@@ -198,4 +200,6 @@ return [
     'js_week' => 'week',
     'js_biweek' => 'tweewekelijks',
     'js_month' => 'maand',
+    'js_hourly' => 'uur',
+    'js_annual' => 'jaar',
 ];

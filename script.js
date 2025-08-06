@@ -65,24 +65,17 @@ function getCurrencySymbol() {
 }
 
 function calculate() {
-	const income = parseFloat(
-		document.getElementById("income").value
-	);
-	const hours = parseFloat(
-		document.getElementById("hours").value
-	);
-	const salaryPeriod =
-		document.getElementById("salary-period").value;
+	const income = parseFloat(document.getElementById("income").value);
+	const hours = parseFloat(document.getElementById("hours").value);
+	const salaryPeriod = document.getElementById("salary-period").value;
 	const timePeriod = document.getElementById("time-period").value;
-	const outputPeriod =
-		document.getElementById("output-period").value;
+	const outputPeriod = document.getElementById("output-period").value;
 	const currencySymbol = getCurrencySymbol();
 	const chatOutput = document.getElementById("chat-output");
 	const liveCounter = document.getElementById("live-counter");
 
 	if (!income || !hours || hours === 0) {
-		chatOutput.innerHTML =
-			`<span class="text-red-600">${window.translations.enter_valid_numbers}</span>`;
+		chatOutput.innerHTML = `<span class="text-red-600">${window.translations.enter_valid_numbers}</span>`;
 		liveCounter.innerHTML = "";
 		clearInterval(counterInterval);
 		return;
@@ -134,6 +127,17 @@ function calculate() {
 			periodText = window.translations.minute;
 			liveCounterMultiplier = 60;
 			break;
+		case "hourly":
+			const hoursPerYear = weeklyHours * 52;
+			earnings = annualIncome / hoursPerYear;
+			periodText = window.translations.hourly;
+			liveCounterMultiplier = 3600; // 1 hour = 3600 seconds
+			break;
+		case "annual":
+			earnings = annualIncome;
+			periodText = window.translations.annual;
+			liveCounterMultiplier = 365.25 * 24 * 60 * 60; // 1 year in seconds
+			break;
 		case "daily":
 			const daysPerYear = 365.25;
 			earnings = annualIncome / daysPerYear;
@@ -166,17 +170,17 @@ function calculate() {
 
 	// Create descriptive text based on inputs
 	const salaryText =
-		salaryPeriod === "annual" ?
-		window.translations.annually :
-		salaryPeriod === "monthly" ?
-		window.translations.per_month :
-		window.translations.per_hour;
+		salaryPeriod === "annual"
+			? window.translations.annually
+			: salaryPeriod === "monthly"
+			? window.translations.per_month
+			: window.translations.per_hour;
 	const timeText =
-		timePeriod === "weekly" ?
-		window.translations.per_week :
-		timePeriod === "daily" ?
-		window.translations.per_day :
-		window.translations.per_month;
+		timePeriod === "weekly"
+			? window.translations.per_week
+			: timePeriod === "daily"
+			? window.translations.per_day
+			: window.translations.per_month;
 
 	chatOutput.innerHTML = "";
 	liveCounter.innerHTML = "";
@@ -184,7 +188,11 @@ function calculate() {
 	currentInstance = new window.TypeIt("#chat-output", {
 		strings: [
 			`${window.translations.calculating} ${periodText}...`,
-			`${window.translations.based_on} ${currencySymbol}${income.toLocaleString()} ${salaryText} ${window.translations.and} ${hours} ${window.translations.hours} ${timeText}...`,
+			`${
+				window.translations.based_on
+			} ${currencySymbol}${income.toLocaleString()} ${salaryText} ${
+				window.translations.and
+			} ${hours} ${window.translations.hours} ${timeText}...`,
 			`${window.translations.you_earn} ${currencySymbol}${formatted} ${window.translations.per} ${periodText}.`,
 		],
 		speed: 15,
@@ -194,14 +202,16 @@ function calculate() {
 		afterComplete: () => {
 			let totalEarned = 0;
 			let secondsElapsed = 0;
+			// Calculate earnings per second for live counter (always per second regardless of display period)
+			const earningsPerSecond = annualIncome / (weeklyHours * 52 * 3600);
 			counterInterval = setInterval(() => {
 				secondsElapsed++;
-				totalEarned =
-					(secondsElapsed / liveCounterMultiplier) *
-					earnings;
-				liveCounter.textContent = `${window.translations.youve_earned} ${currencySymbol}${totalEarned.toFixed(
-							4
-						)} ${window.translations.since_clicking}`;
+				totalEarned = secondsElapsed * earningsPerSecond;
+				liveCounter.textContent = `${
+					window.translations.youve_earned
+				} ${currencySymbol}${totalEarned.toFixed(4)} ${
+					window.translations.since_clicking
+				}`;
 			}, 1000);
 		},
 	}).go();
@@ -218,15 +228,13 @@ function setFamousSalary(income, hours) {
 	// Scroll to top smoothly
 	window.scrollTo({
 		top: 0,
-		behavior: "smooth"
+		behavior: "smooth",
 	});
 }
 
 window.addEventListener("DOMContentLoaded", () => {
 	currentInstance = new window.TypeIt("#chat-output", {
-		strings: [
-			window.translations.welcome_message,
-		],
+		strings: [window.translations.welcome_message],
 		speed: 15,
 		lifeLike: true,
 		waitUntilVisible: true,
@@ -235,8 +243,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		},
 	}).go();
 
-	document.getElementById("year").textContent =
-		new Date().getFullYear();
+	document.getElementById("year").textContent = new Date().getFullYear();
 });
 
 function toggleTheme() {
@@ -254,11 +261,10 @@ function toggleMobileMenu() {
 }
 
 // Close mobile menu when clicking on a link
-document.addEventListener("DOMContentLoaded", function() {
-	const mobileMenuLinks =
-		document.querySelectorAll(".mobile-menu a");
+document.addEventListener("DOMContentLoaded", function () {
+	const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
 	mobileMenuLinks.forEach((link) => {
-		link.addEventListener("click", function() {
+		link.addEventListener("click", function () {
 			if (this.getAttribute("href") !== "#") {
 				toggleMobileMenu();
 			}

@@ -6,11 +6,12 @@ A comprehensive, multilingual web application that calculates and visualizes you
 
 ### **Advanced Salary Calculations**
 
--   Multiple salary input formats: Annual, Monthly, Hourly
--   Flexible working hour periods: Weekly, Daily, Monthly
--   Multiple output periods: Per Second, Minute, Day, Week, Biweek, Month
--   Real-time earnings counter with live updates
--   Precise calculations with up to 6 decimal places
+-   **Multiple salary input formats**: Annual, Monthly, Hourly with automatic conversions
+-   **Flexible working hour periods**: Weekly, Daily, Monthly with precise calculations
+-   **8 output period options**: Per Second, Minute, Hourly, Daily, Weekly, Biweekly, Monthly, Annual
+-   **Real-time earnings counter** with live updates every second
+-   **High precision calculations** with up to 6 decimal places for accuracy
+-   **Instant recalculation** with smooth transitions and animations
 
 ### **International Support**
 
@@ -88,28 +89,87 @@ A comprehensive, multilingual web application that calculates and visualizes you
 
 ## **Technical Stack**
 
--   **Backend**: PHP 8+ with modular architecture
--   **Frontend**: Vanilla JavaScript with modern ES6+ features
--   **Styling**: TailwindCSS + Custom CSS with CSS variables
--   **Animation**: TypeIt.js for chat-style typing effects
--   **PWA**: Web App Manifest with offline support
--   **SEO**: Structured data, meta tags, and robots.txt
+-   **Backend**: PHP 8+ with modular include-based architecture
+-   **Frontend**: Vanilla JavaScript ES6+ with modern browser APIs
+-   **Styling**: TailwindCSS v2.2.19 + Custom CSS with CSS variables for theming
+-   **Animation**: TypeIt.js v8.7.1 for chat-style typing effects
+-   **PWA**: Web App Manifest with offline support and custom SVG favicon
+-   **Internationalization**: PHP-based translation system with JavaScript integration
+-   **SEO**: Structured meta tags, robots.txt, and semantic HTML structure
+-   **Performance**: Separated CSS/JS files for optimal caching and loading
 
 ## **Dependencies**
 
--   [TailwindCSS v2.2.19](https://tailwindcss.com/) (via CDN)
--   [TypeIt.js v8.7.1](https://typeitjs.com/) (via CDN)
--   PHP 8.0+ (for server-side functionality)
+### **Frontend Libraries (CDN)**
+-   [TailwindCSS v2.2.19](https://tailwindcss.com/) - Utility-first CSS framework
+-   [TypeIt.js v8.7.1](https://typeitjs.com/) - Chat-style typing animations
+
+### **Server Requirements**
+-   **PHP 8.0+** with standard extensions (no additional packages required)
+-   **Web server** (Apache, Nginx, or built-in PHP server)
+-   **No database required** - fully file-based application
+
+### **Browser Requirements**
+-   **ES6+ support** for modern JavaScript features
+-   **CSS Grid and Flexbox** for responsive layouts
+-   **Web App Manifest** support for PWA features
+
+## **Installation & Setup**
+
+### **Quick Start**
+
+1. **Download** or clone the repository to your web server directory
+2. **Ensure PHP 8.0+** is installed and configured
+3. **Point your web server** to the project directory
+4. **Access** `index.php` in your browser - no additional configuration needed!
+
+### **Local Development**
+
+```bash
+# Clone the repository
+git clone https://github.com/wesselvandenijssel/SalaryPerSecond.git
+cd SalaryPerSecond
+
+# Start PHP built-in server
+php -S localhost:8000
+
+# Open browser to http://localhost:8000
+```
+
+### **XAMPP/LAMP Setup**
+
+1. Copy project to `htdocs/SalaryPerSecond`
+2. Start Apache server
+3. Navigate to `http://localhost/SalaryPerSecond`
+
+### **File Permissions**
+
+No special file permissions required - all calculations are client-side with read-only PHP templates.
 
 ## **Browser Support**
 
--   ✅ Chrome/Edge 88+
--   ✅ Firefox 85+
--   ✅ Safari 14+
--   ✅ Mobile browsers (iOS Safari, Chrome Mobile)
--   ✅ Progressive Web App installation support
+-   ✅ **Chrome/Edge 88+** - Full feature support including PWA
+-   ✅ **Firefox 85+** - Complete functionality with smooth animations  
+-   ✅ **Safari 14+** - iOS and macOS compatibility
+-   ✅ **Mobile browsers** - Responsive design for iOS Safari, Chrome Mobile
+-   ✅ **Progressive Web App** installation support on supported browsers
+-   ✅ **Touch devices** - Optimized for tablets and smartphones
+
+### **Performance Characteristics**
+
+-   **Client-side calculations** - No server round trips for computations
+-   **CDN-delivered assets** - Fast loading of TailwindCSS and TypeIt.js
+-   **Minimal JavaScript bundle** - Under 10KB of custom JavaScript
+-   **Optimized images** - SVG favicon for crisp display at any size
 
 ## **Recent Updates**
+
+### v2.1 - Bug Fixes & Optimization (August 2025)
+
+-   **Fixed live counter calculation** - Resolved mathematical error showing €0.0010 instead of correct per-second earnings
+-   **Enhanced translation completeness** - Added missing translation keys for all output periods
+-   **Improved calculation accuracy** - Optimized JavaScript formulas for precise real-time calculations
+-   **Code quality improvements** - Better error handling and edge case management
 
 ### v2.0 - Major Refactor (August 2025)
 
@@ -118,7 +178,7 @@ A comprehensive, multilingual web application that calculates and visualizes you
 -   **Separated CSS and JavaScript** files for better caching
 -   **Enhanced UI** with improved dark mode and mobile responsiveness
 -   **Celebrity salary comparisons** with famous personalities
--   **PWA support** with favicon and web manifest
+-   **PWA support** with custom SVG favicon and web manifest
 
 ### v1.5 - Currency & Features (July 2025)
 
@@ -234,6 +294,29 @@ A comprehensive, multilingual web application that calculates and visualizes you
 -   Voice-activated calculations
 
 ## **Contributing**
+
+We welcome contributions to improve the Salary Per Second Calculator! Here's how you can help:
+
+### **Bug Reports**
+-   Check existing issues before creating new ones
+-   Include browser/OS information and steps to reproduce
+-   Provide specific examples of incorrect calculations
+
+### **Feature Requests**
+-   Check the roadmap section for planned features
+-   Suggest new currencies, calculation methods, or UI improvements
+-   Provide use cases and user benefit descriptions
+
+### **Code Contributions**
+-   Fork the repository and create feature branches
+-   Follow existing code style (PHP-FIG standards for PHP)
+-   Test across multiple browsers and devices
+-   Update translation files for new user-facing text
+
+### **Translation Help**
+-   Add new language files in the `lang/` directory
+-   Follow the existing `en.php` structure for consistency
+-   Include both PHP and JavaScript translation keys
 
 Feel free to submit issues, feature requests, or pull requests. All contributions are welcome!
 

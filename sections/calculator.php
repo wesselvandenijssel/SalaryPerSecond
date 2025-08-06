@@ -13,7 +13,7 @@
 				<label class="block text-sm font-medium mb-1 text-theme"><?php echo t('label_salary_period'); ?></label>
 				<select id="salary-period" class="w-full">
 					<option value="annual"><?php echo t('period_annual'); ?></option>
-					<option value="monthly"><?php echo t('period_monthly'); ?></option>
+					<option selected value="monthly"><?php echo t('period_monthly'); ?></option>
 					<option value="hourly"><?php echo t('period_hourly'); ?></option>
 				</select>
 			</div>
@@ -109,6 +109,8 @@
 				<select id="output-period" class="w-full">
 					<option value="second"><?php echo t('output_second'); ?></option>
 					<option value="minute"><?php echo t('output_minute'); ?></option>
+					<option value="hourly"><?php echo t('output_hourly'); ?></option>
+					<option value="annual"><?php echo t('output_annual'); ?></option>
 					<option value="daily"><?php echo t('output_daily'); ?></option>
 					<option value="weekly"><?php echo t('output_weekly'); ?></option>
 					<option value="biweekly"><?php echo t('output_biweekly'); ?></option>
