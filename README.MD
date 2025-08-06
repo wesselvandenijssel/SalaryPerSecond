@@ -132,6 +132,107 @@ A comprehensive, multilingual web application that calculates and visualizes you
 -   Real-time earnings counter
 -   Chat-style interface with animations
 
+## **Planned Features & Roadmap**
+
+### **Advanced Calculations**
+
+#### **Salary Growth Projection**
+
+-   Estimate salary progression over 1, 5, or 10 years based on growth rates
+-   Optional inflation rate adjustment for real value projections
+-   Interactive timeline visualization of career earnings
+
+#### **Net Salary Calculator (After Tax)**
+
+-   Basic tax deduction presets by country/region
+-   Custom tax percentage input option
+-   Toggle between gross and net earnings display
+-   Country-specific tax brackets and deductions
+
+#### **Salary Comparison by Country/Region**
+
+-   Visual salary benchmark tool by country, industry, and position
+-   Interactive comparison charts (bar/line graphs)
+-   Regional cost of living adjustments
+-   Industry-specific salary data integration
+
+### **Enhanced User Experience**
+
+#### **Saved Scenarios (LocalStorage)**
+
+-   Save multiple salary setups (Job A vs. Job B comparisons)
+-   Quick scenario switching and comparison views
+-   Export/import scenario data
+-   Shareable scenario links
+
+#### **Earnings Progress Bar**
+
+-   Live progress bar showing daily/weekly/monthly earnings accumulation
+-   Visual milestone celebrations
+-   Customizable progress targets
+
+#### **Enhanced PWA Features**
+
+-   Push notifications: "You've earned €X since your last visit"
+-   Offline calculation capabilities
+-   Background sync for updated currency rates
+-   Native app-like experience
+
+### **Analytics & Insights**
+
+#### **Salary Guide Content Hub**
+
+-   Educational articles and guides:
+    -   "How to Negotiate a Higher Salary"
+    -   "Top Paying Jobs in 2025"
+    -   "Freelancer Pricing Strategy Guide"
+-   SEO-optimized content for increased visibility
+-   Regular industry insights and market trends
+
+#### **Anonymous Benchmarks**
+
+-   Live feed of anonymized salary data from recent users
+-   Geographic and industry-based comparisons
+-   Privacy-focused data aggregation
+
+### **Gamification & Engagement**
+
+#### **Social Share Generator**
+
+-   Customizable share messages: "I earn €0.38 per second. Calculate yours!"
+-   Beautiful social media cards with earnings breakdowns
+-   Viral coefficient optimization
+
+#### **Goal Tracker**
+
+-   Set target salary goals with progress tracking
+-   Achievement milestones and celebrations
+-   Personalized recommendations for salary growth
+-   Career progression roadmap suggestions
+
+### **Future Integrations**
+
+#### **API Integrations**
+
+-   Real-time currency exchange rates
+-   Job market data from major platforms
+-   Industry salary databases
+-   Economic indicators and trends
+
+#### **AI-Powered Features**
+
+-   Intelligent salary recommendations
+-   Career path optimization
+-   Market trend predictions
+-   Personalized financial advice
+
+#### **Mobile App**
+
+-   Native iOS and Android applications
+-   Widget for home screen earnings display
+-   Apple Watch and smartwatch integration
+-   Voice-activated calculations
+
 ## **Contributing**
 
 Feel free to submit issues, feature requests, or pull requests. All contributions are welcome!
